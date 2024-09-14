@@ -33,7 +33,7 @@ export default function TeamsView() {
   const [sortBy, setSortBy] = useState(0);
   const returnPathTextArray = Teams();
   const pathname = usePathname().replace('/offseason-2/teams/', '');
-  // @ts-ignore
+  // @ts-expect-error
   const team = teamArray[pathname];
 
   useEffect(() => {

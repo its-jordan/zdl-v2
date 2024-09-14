@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { teamArray } from '@/data/offseason-2/teams';
 import returnMons from '@/data/pokemonData';
-import { Radar } from 'recharts';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Select,
@@ -12,8 +11,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { ChartContainer } from '@/components/ui/chart';
-import { Badge } from '@/components/ui/badge';
 import { nameSplit } from '@/util/nameSplit';
 import Image from 'next/image';
 

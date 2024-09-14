@@ -84,22 +84,22 @@ export default function Scores() {
                               href={`/offseason-2/teams/${match.player1}`}>
                               <Image
                                 className='player-team-image'
-                                // @ts-ignore
+                                // @ts-expect-error
                                 src={teamArray[match.player1].picture}
                                 width={50}
                                 height={50}
-                                // @ts-ignore
+                                // @ts-expect-error
                                 alt={teamArray[match.player1].team}></Image>
                               <div className='player-name-container'>
                                 <div className='player-team-name'>
                                   {
-                                    // @ts-ignore
+                                    // @ts-expect-error
                                     teamArray[match.player1].team
                                   }
                                 </div>
                                 <div className='player-name'>
                                   {
-                                    // @ts-ignore
+                                    // @ts-expect-error
                                     teamArray[match.player1].name
                                   }
                                 </div>
@@ -119,22 +119,22 @@ export default function Scores() {
                               href={`/offseason-2/teams/${match.player2}`}>
                               <Image
                                 className='player-team-image'
-                                // @ts-ignore
+                                // @ts-expect-error
                                 src={teamArray[match.player2].picture}
                                 width={50}
                                 height={50}
-                                // @ts-ignore
+                                // @ts-expect-error
                                 alt={teamArray[match.player2].team}></Image>
                               <div className='player-name-container'>
                                 <div className='player-team-name'>
                                   {
-                                    // @ts-ignore
+                                    // @ts-expect-error
                                     teamArray[match.player2].team
                                   }
                                 </div>
                                 <div className='player-name'>
                                   {
-                                    // @ts-ignore
+                                    // @ts-expect-error
                                     teamArray[match.player2].name
                                   }
                                 </div>

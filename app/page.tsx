@@ -1,5 +1,3 @@
-import PokemonTeamComparison from '@/components/pokemon-team-comparison';
-import PokemonCard from '@/components/standalone/pokemoncard';
 import Image from 'next/image';
 
 export default function Home() {
