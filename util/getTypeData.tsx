@@ -37,7 +37,7 @@ export function ReturnTypeMatchup({ pokemon }: Pokemon) {
   return (
     <div className='type-matchup-data'>
       <div className='type-matchup-pokemon' data-type={`${data.types[0]}`}>
-        <Image
+        <img
           loading='lazy'
           className='pokemon-img matchup-data'
           src={data.sprite}

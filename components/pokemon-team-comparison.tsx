@@ -63,12 +63,13 @@ export default function PokemonTeamComparison() {
                     value={team}
                     disabled={team == team2 ? true : false}>
                     <div className='team-select'>
-                      <Image
+                      <img
                         className='card-picture'
                         src={teamArray[team as keyof typeof teamArray].picture}
                         alt=''
                         width={30}
-                        height={30}></Image>
+                        height={30}
+                      />
                       <div className='team-select-names'>
                         <div>
                           {teamArray[team as keyof typeof teamArray].discord}
@@ -95,12 +96,13 @@ export default function PokemonTeamComparison() {
                     value={team}
                     disabled={team == team1 ? true : false}>
                     <div className='team-select'>
-                      <Image
+                      <img
                         className='card-picture'
                         src={teamArray[team as keyof typeof teamArray].picture}
                         alt=''
                         width={30}
-                        height={30}></Image>
+                        height={30}
+                      />
                       <div className='team-select-names'>
                         <div>
                           {teamArray[team as keyof typeof teamArray].discord}
@@ -217,22 +219,19 @@ function PokemonDisplay({
   return (
     <div className='card effectiveness' data-type={pokemon.types[0]}>
       <div className='card-top'>
-        <Image
+        <img
           className='card-picture'
           src={pokemon.sprite}
           alt={`${pokemon.name}'s sprite.`}
           width={50}
-          height={50}></Image>
+          height={50}
+        />
         <div className='card-title'>{nameSplit(pokemon.name)}</div>
         <div className='card-type'>
           {pokemon.types.map((type, index) => {
             return (
               <div key={index} className='card-type-icons' data-type={type}>
-                <Image
-                  src={`/icons/${type}.svg`}
-                  width={50}
-                  height={50}
-                  alt=''></Image>
+                <img src={`/icons/${type}.svg`} width={50} height={50} alt='' />
               </div>
             );
           })}
@@ -279,11 +278,12 @@ function PokemonDisplay({
                         key={type}
                         className='card-type-icons'
                         data-type={type}>
-                        <Image
+                        <img
                           src={`/icons/${type}.svg`}
                           width={25}
                           height={25}
-                          alt=''></Image>
+                          alt=''
+                        />
                       </div>
                       <div>{effectiveness}</div>
                     </div>

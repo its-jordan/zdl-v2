@@ -148,7 +148,7 @@ export default function Standings() {
                 <div className='standings-team-content rank'>{index + 1}</div>
                 <div className='standings-team-content team'>
                   <div className='standings-team-container'>
-                    <Image
+                    <img
                       src={team.picture}
                       alt={`${team.name}'s avatar`}
                       width={32}

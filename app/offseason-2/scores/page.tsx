@@ -82,14 +82,15 @@ export default function Scores() {
                             <Link
                               className='player-team'
                               href={`/offseason-2/teams/${match.player1}`}>
-                              <Image
+                              <img
                                 className='player-team-image'
                                 // @ts-expect-error
                                 src={teamArray[match.player1].picture}
                                 width={50}
                                 height={50}
                                 // @ts-expect-error
-                                alt={teamArray[match.player1].team}></Image>
+                                alt={teamArray[match.player1].team}
+                              />
                               <div className='player-name-container'>
                                 <div className='player-team-name'>
                                   {
@@ -117,14 +118,15 @@ export default function Scores() {
                             <Link
                               className='player-team'
                               href={`/offseason-2/teams/${match.player2}`}>
-                              <Image
+                              <img
                                 className='player-team-image'
                                 // @ts-expect-error
                                 src={teamArray[match.player2].picture}
                                 width={50}
                                 height={50}
                                 // @ts-expect-error
-                                alt={teamArray[match.player2].team}></Image>
+                                alt={teamArray[match.player2].team}
+                              />
                               <div className='player-name-container'>
                                 <div className='player-team-name'>
                                   {

@@ -74,7 +74,7 @@ const Navbar = () => {
                               className='navbar_sublink_item'
                               key={index}
                               href={team.path}>
-                              <Image
+                              <img
                                 className='navbar_sublink_avatar'
                                 src={team.avatar}
                                 width={50}

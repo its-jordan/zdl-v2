@@ -40,14 +40,15 @@ export default function PlayerSchedule({
                         teamArray[playerMatch.player1].discord
                       }`}
                       className='player-team'>
-                      <Image
+                      <img
                         className='player-team-image'
                         // @ts-ignore
                         src={teamArray[playerMatch.player1].picture}
                         width={50}
                         height={50}
                         // @ts-ignore
-                        alt={teamArray[playerMatch.player1].team}></Image>
+                        alt={teamArray[playerMatch.player1].team}
+                      />
                       <div className='player-name-container'>
                         <div className='player-team-name'>
                           {
@@ -82,14 +83,15 @@ export default function PlayerSchedule({
                           ? 'current-player'
                           : ''
                       }`}>
-                      <Image
+                      <img
                         className='player-team-image'
                         // @ts-ignore
                         src={teamArray[playerMatch.player2].picture}
                         width={50}
                         height={50}
                         // @ts-ignore
-                        alt={teamArray[playerMatch.player2].team}></Image>
+                        alt={teamArray[playerMatch.player2].team}
+                      />
                       <div className='player-name-container'>
                         <div className='player-team-name'>
                           {

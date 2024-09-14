@@ -28,22 +28,19 @@ export default function PokemonCard({ pokemon }: CardData) {
   return (
     <div className='card' data-type={data.types[0]}>
       <div className='card-top'>
-        <Image
+        <img
           className='card-picture'
           src={data.sprite}
           alt=''
           width={50}
-          height={50}></Image>
+          height={50}
+        />
         <div className='card-title'>{nameSplit(data.name)}</div>
         <div className='card-type'>
           {data.types.map((type, index) => {
             return (
               <div key={index} className='card-type-icons' data-type={type}>
-                <Image
-                  src={`/icons/${type}.svg`}
-                  width={50}
-                  height={50}
-                  alt=''></Image>
+                <img src={`/icons/${type}.svg`} width={50} height={50} alt='' />
               </div>
             );
           })}

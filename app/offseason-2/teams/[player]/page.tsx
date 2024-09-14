@@ -56,7 +56,7 @@ export default function TeamsView() {
   return (
     <main className='mt-20'>
       <div className='team-header'>
-        <Image
+        <img
           className='team-picture'
           src={team.picture}
           width={85}
@@ -129,7 +129,7 @@ export default function TeamsView() {
               <div className='type-matchup-spacer'>Pokémon</div>
               {types.map((type, index) => (
                 <div className='type-icon-container type-matchup' key={index}>
-                  <Image
+                  <img
                     src={`/icons/${type}.svg`}
                     height={30}
                     width={30}
