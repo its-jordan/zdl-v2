@@ -6,8 +6,8 @@ export default function Home() {
       <Image
         src='/images/rayquaza-jordans.png'
         alt='Rayquaza Jordans'
-        width={800}
-        height={800}></Image>
+        width={900}
+        height={900}></Image>
     </main>
   );
 }
