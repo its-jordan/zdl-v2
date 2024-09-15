@@ -1,6 +1,16 @@
 export function nameSplit(e: string) {
   if (e == 'farfetchd-galar') {
     return "Galarian Farfetch'd";
+  } else if (e.includes('arceus-')) {
+    return `${
+      e.split('-')[0].charAt(0).toUpperCase() +
+      e.split('-')[0].slice(1) +
+      ' ' +
+      '(' +
+      e.split('-')[1].charAt(0).toUpperCase() +
+      e.split('-')[1].slice(1) +
+      ')'
+    }`;
   } else if (e == 'ting-lu') {
     return `${
       e.split('-')[0].charAt(0).toUpperCase() +
@@ -29,7 +39,17 @@ export function nameSplit(e: string) {
     e.includes('-large') ||
     e.includes('-super') ||
     e.includes('-defense') ||
-    e.includes('-speed')
+    e.includes('-speed') ||
+    e.includes('-tusk') ||
+    e.includes('-fire') ||
+    e.includes('-sky') ||
+    e.includes('-bloodmoon') ||
+    e.includes('-mane') ||
+    e.includes('-complete') ||
+    e.includes('-crowned') ||
+    e.includes('-shocks') ||
+    e.includes('-white') ||
+    e.includes('-black')
   ) {
     return `${
       e.split('-')[0].charAt(0).toUpperCase() +

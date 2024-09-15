@@ -187,10 +187,11 @@ function PokemonDisplay({
   opponent: PokemonData;
 }) {
   const getTypeEffectiveness = (type: string) => {
-    if (pokemon.weaknesses.includes(`${type}: 0.25x`)) return 'Super Resistant';
-    if (pokemon.weaknesses.includes(`${type}: 0.5x`)) return 'Resistant';
-    if (pokemon.weaknesses.includes(`${type}: 2x`)) return 'Weak';
-    if (pokemon.weaknesses.includes(`${type}: 4x`)) return 'Super Weak';
+    if (pokemon.weaknesses.includes(`${type}: 0.25x`))
+      return 'Not Very Effective';
+    if (pokemon.weaknesses.includes(`${type}: 0.5x`)) return 'Not Effective';
+    if (pokemon.weaknesses.includes(`${type}: 2x`)) return 'Effective';
+    if (pokemon.weaknesses.includes(`${type}: 4x`)) return 'Super Effective';
     if (pokemon.weaknesses.includes(`${type}: 0x`)) return 'Immune';
     return 'Normal';
   };

@@ -14516,6 +14516,38 @@ export default function returnMons(e: string) {
       ],
     };
     return data;
+  } else if (e == 'archaludon') {
+    const data = {
+      name: 'archaludon',
+      abilities: ['stamina', 'sturdy', 'stalwart'],
+      id: 1018,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1018.png',
+      types: ['steel', 'dragon'],
+      weaknesses: [
+        'bug: 0.5x',
+        'electric: 0.5x',
+        'fighting: 2x',
+        'flying: 0.5x',
+        'grass: 0.25x',
+        'ground: 2x',
+        'normal: 0.5x',
+        'poison: 0x',
+        'psychic: 0.5x',
+        'rock: 0.5x',
+        'steel: 0.5x',
+        'water: 0.5x',
+      ],
+      stats: [
+        { stat: 90, name: 'HP' },
+        { stat: 105, name: 'ATT' },
+        { stat: 130, name: 'DEF' },
+        { stat: 125, name: 'SPA' },
+        { stat: 65, name: 'SPD' },
+        { stat: 85, name: 'SPE' },
+      ],
+    };
+    return data;
   } else if (e == 'palkia') {
     const data = {
       name: 'palkia',
@@ -15122,6 +15154,38 @@ export default function returnMons(e: string) {
         { stat: 108, name: 'SPA' },
         { stat: 70, name: 'SPD' },
         { stat: 70, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'samurott-hisui') {
+    const data = {
+      name: 'samurott-hisui',
+      abilities: ['torrent', 'sharpness'],
+      id: 10236,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10236.png',
+      types: ['water', 'dark'],
+      weaknesses: [
+        'bug: 2x',
+        'dark: 0.5x',
+        'electric: 2x',
+        'fairy: 2x',
+        'fighting: 2x',
+        'fire: 0.5x',
+        'ghost: 0.5x',
+        'grass: 2x',
+        'ice: 0.5x',
+        'psychic: 0x',
+        'steel: 0.5x',
+        'water: 0.5x',
+      ],
+      stats: [
+        { stat: 90, name: 'HP' },
+        { stat: 108, name: 'ATT' },
+        { stat: 80, name: 'DEF' },
+        { stat: 100, name: 'SPA' },
+        { stat: 65, name: 'SPD' },
+        { stat: 85, name: 'SPE' },
       ],
     };
     return data;
@@ -30062,7 +30126,7 @@ export default function returnMons(e: string) {
     return data;
   } else if (e == 'arceus-fairy') {
     const data = {
-      name: 'arceus',
+      name: 'arceus-fairy',
       abilities: ['multitype'],
       id: 493,
       sprite:
@@ -30088,7 +30152,7 @@ export default function returnMons(e: string) {
     return data;
   } else if (e == 'arceus-steel') {
     const data = {
-      name: 'arceus',
+      name: 'arceus-steel',
       abilities: ['multitype'],
       id: 493,
       sprite:
@@ -30122,13 +30186,20 @@ export default function returnMons(e: string) {
     return data;
   } else if (e == 'arceus-dark') {
     const data = {
-      name: 'arceus',
+      name: 'arceus-dark',
       abilities: ['multitype'],
       id: 493,
       sprite:
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png',
       types: ['dark'],
-      weaknesses: ['fighting: 2x', 'ghost: 0x'],
+      weaknesses: [
+        'bug: 2x',
+        'dark: 0.5x',
+        'fairy: 2x',
+        'fighting: 2x',
+        'ghost: 0.5x',
+        'psychic: 0x',
+      ],
       stats: [
         { stat: 120, name: 'HP' },
         { stat: 120, name: 'ATT' },
@@ -30141,13 +30212,20 @@ export default function returnMons(e: string) {
     return data;
   } else if (e == 'arceus-bug') {
     const data = {
-      name: 'arceus',
+      name: 'arceus-bug',
       abilities: ['multitype'],
       id: 493,
       sprite:
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png',
       types: ['bug'],
-      weaknesses: ['fighting: 2x', 'ghost: 0x'],
+      weaknesses: [
+        'fighting: 0.5x',
+        'fire: 2x',
+        'flying: 2x',
+        'grass: 0.5x',
+        'ground: 0.5x',
+        'rock: 2x',
+      ],
       stats: [
         { stat: 120, name: 'HP' },
         { stat: 120, name: 'ATT' },
@@ -30191,7 +30269,7 @@ export default function returnMons(e: string) {
     return data;
   } else if (e == 'arceus-water') {
     const data = {
-      name: 'arceus',
+      name: 'arceus-water',
       abilities: ['multitype'],
       id: 493,
       sprite:
@@ -30245,13 +30323,23 @@ export default function returnMons(e: string) {
     return data;
   } else if (e == 'arceus-grass') {
     const data = {
-      name: 'arceus',
+      name: 'arceus-grass',
       abilities: ['multitype'],
       id: 493,
       sprite:
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png',
       types: ['grass'],
-      weaknesses: ['fighting: 2x', 'ghost: 0x'],
+      weaknesses: [
+        'bug: 2x',
+        'electric: 0.5x',
+        'fire: 2x',
+        'flying: 2x',
+        'grass: 0.5x',
+        'ground: 0.5x',
+        'ice: 2x',
+        'poison: 2x',
+        'water: 0.5x',
+      ],
       stats: [
         { stat: 120, name: 'HP' },
         { stat: 120, name: 'ATT' },
@@ -30564,13 +30652,21 @@ export default function returnMons(e: string) {
     return data;
   } else if (e == 'arceus-poison') {
     const data = {
-      name: 'arceus',
+      name: 'arceus-poison',
       abilities: ['multitype'],
       id: 493,
       sprite:
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png',
       types: ['poison'],
-      weaknesses: ['fighting: 2x', 'ghost: 0x'],
+      weaknesses: [
+        'bug: 0.5x',
+        'fairy: 0.5x',
+        'fighting: 0.5x',
+        'grass: 0.5x',
+        'ground: 2x',
+        'poison: 0.5x',
+        'psychic: 2x',
+      ],
       stats: [
         { stat: 120, name: 'HP' },
         { stat: 120, name: 'ATT' },
@@ -30668,13 +30764,48 @@ export default function returnMons(e: string) {
     return data;
   } else if (e == 'arceus-dragon') {
     const data = {
-      name: 'arceus',
+      name: 'arceus-dragon',
       abilities: ['multitype'],
       id: 493,
       sprite:
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png',
       types: ['dragon'],
-      weaknesses: ['fighting: 2x', 'ghost: 0x'],
+      weaknesses: [
+        'dragon: 2x',
+        'electric: 0.5x',
+        'fairy: 2x',
+        'fire: 0.5x',
+        'grass: 0.5x',
+        'ice: 2x',
+        'water: 0.5x',
+      ],
+      stats: [
+        { stat: 120, name: 'HP' },
+        { stat: 120, name: 'ATT' },
+        { stat: 120, name: 'DEF' },
+        { stat: 120, name: 'SPA' },
+        { stat: 120, name: 'SPD' },
+        { stat: 120, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'arceus-flying') {
+    const data = {
+      name: 'arceus-flying',
+      abilities: ['multitype'],
+      id: 493,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png',
+      types: ['flying'],
+      weaknesses: [
+        'bug: 0.5x',
+        'electric: 2x',
+        'fighting: 0.5x',
+        'grass: 0.5x',
+        'ground: 0x',
+        'ice: 2x',
+        'rock: 2x',
+      ],
       stats: [
         { stat: 120, name: 'HP' },
         { stat: 120, name: 'ATT' },
@@ -30713,6 +30844,103 @@ export default function returnMons(e: string) {
         { stat: 135, name: 'SPA' },
         { stat: 80, name: 'SPD' },
         { stat: 106, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'enamorus-therian') {
+    const data = {
+      name: 'enamorus-therian',
+      abilities: ['overcoat'],
+      id: 10249,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10249.png',
+      types: ['fairy', 'flying'],
+      weaknesses: [
+        'bug: 0.25x',
+        'dark: 0.5x',
+        'dragon: 0x',
+        'electric: 2x',
+        'fighting: 0.25x',
+        'grass: 0.5x',
+        'ground: 0x',
+        'ice: 2x',
+        'poison: 2x',
+        'rock: 2x',
+        'steel: 2x',
+      ],
+      stats: [
+        { stat: 74, name: 'HP' },
+        { stat: 115, name: 'ATT' },
+        { stat: 110, name: 'DEF' },
+        { stat: 135, name: 'SPA' },
+        { stat: 100, name: 'SPD' },
+        { stat: 46, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'roaring-moon') {
+    const data = {
+      name: 'roaring-moon',
+      abilities: ['protosynthesis'],
+      id: 1005,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1005.png',
+      types: ['dragon', 'dark'],
+      weaknesses: [
+        'bug: 2x',
+        'dark: 0.5x',
+        'dragon: 2x',
+        'electric: 0.5x',
+        'fairy: 4x',
+        'fighting: 2x',
+        'fire: 0.5x',
+        'ghost: 0.5x',
+        'grass: 0.5x',
+        'ice: 2x',
+        'psychic: 0x',
+        'water: 0.5x',
+      ],
+      stats: [
+        { stat: 105, name: 'HP' },
+        { stat: 139, name: 'ATT' },
+        { stat: 71, name: 'DEF' },
+        { stat: 55, name: 'SPA' },
+        { stat: 101, name: 'SPD' },
+        { stat: 119, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'iron-crown') {
+    const data = {
+      name: 'iron-crown',
+      abilities: ['quark-drive'],
+      id: 1023,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1023.png',
+      types: ['steel', 'psychic'],
+      weaknesses: [
+        'dark: 2x',
+        'dragon: 0.5x',
+        'fairy: 0.5x',
+        'fire: 2x',
+        'flying: 0.5x',
+        'ghost: 2x',
+        'grass: 0.5x',
+        'ground: 2x',
+        'ice: 0.5x',
+        'normal: 0.5x',
+        'poison: 0x',
+        'psychic: 0.25x',
+        'rock: 0.5x',
+        'steel: 0.5x',
+      ],
+      stats: [
+        { stat: 90, name: 'HP' },
+        { stat: 72, name: 'ATT' },
+        { stat: 100, name: 'DEF' },
+        { stat: 122, name: 'SPA' },
+        { stat: 108, name: 'SPD' },
+        { stat: 98, name: 'SPE' },
       ],
     };
     return data;

@@ -40,20 +40,20 @@
     "mewtwo",
     "calyrex-ice",
     "ting-lu",
-    "annihilape ",
-    "deoxys-normal",
+    "arceus-flying",
+    "samurott-hisui",
     "gholdengo"
   ],
   "tokotoro": [
     "mewtwo-mega-x",
     "kyurem-white",
     "zamazenta-crowned",
-    "enamorus-incarnate",
+    "spectrier",
     "slowking",
     "snorlax",
     "heatran",
-    "naganadel",
-    "dhelmise"
+    "enamorus-therian",
+    "sandy-shocks"
   ],
   "resolamxxy": [
     "kyogre",
@@ -71,41 +71,41 @@
     "rayquaza",
     "arceus-fairy",
     "cyclizar",
-    "kyurem-black",
     "pecharunt",
-    "mantine",
+    "blastoise-mega",
+    "hippowdon",
     "magnezone",
-    "krookodile",
     "espeon",
-    "lokix"
+    "houndstone"
   ],
   "its_jordan": [
     "arceus-steel",
     "groudon",
     "pheromosa",
-    "kingambit",
-    "dracovish",
+    "lopunny-mega",
+    "roaring-moon",
     "tapu-lele",
     "sneasler",
-    "piplup"
+    "piplup",
+    "spidops"
   ],
   "jaegerpods": [
     "zacian",
     "arceus-dark",
     "great-tusk",
     "gouging-fire",
-    "dragonite",
-    "swampert",
+    "charizard-mega-y",
+    "archaludon",
     "ribombee",
     "skarmory",
-    "slowbro-mega"
+    "milotic"
   ],
   "ifurgat": [
     "magearna",
     "giratina-origin",
     "terapagos",
     "landorus-therian",
-    "chi-yu",
+    "naganadel",
     "alomomola",
     "slurpuff",
     "arceus-bug",
@@ -117,10 +117,8 @@
     "landorus-incarnate",
     "flutter-mane",
     "diancie-mega",
-    "charizard-mega-y",
-    "seismitoad",
-    "ursaluna-bloodmoon",
-    "rabsca"
+    "zekrom",
+    "ursaluna-bloodmoon"
   ],
   "dtbaggins": [
     "dragapult",
@@ -131,7 +129,8 @@
     "iron-treads",
     "iron-hands",
     "orthworm",
-    "iron-boulder",
-    "iron-leaves"
+    "iron-crown",
+    "iron-jugulis",
+    "xurkitree"
   ]
 }
