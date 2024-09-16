@@ -49,7 +49,8 @@ export function nameSplit(e: string) {
     e.includes('-crowned') ||
     e.includes('-shocks') ||
     e.includes('-white') ||
-    e.includes('-black')
+    e.includes('-black') ||
+    e.includes('-cornerstone')
   ) {
     return `${
       e.split('-')[0].charAt(0).toUpperCase() +

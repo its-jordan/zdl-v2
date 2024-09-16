@@ -18,6 +18,8 @@ import {
 import schedule from '@/data/offseason-2/schedule.json';
 import PlayerSchedule from '@/data/offseason-2/playerSchedule';
 import returnMons from '@/data/pokemonData';
+import topguns from '@/data/offseason-2/topguns.json';
+import { nameSplit } from '@/util/nameSplit';
 
 const sortOptions = [
   { value: 0, label: 'HP' },
@@ -48,6 +50,11 @@ export default function TeamsView() {
     setSortBy(numValue);
     localStorage.setItem('pokemonSort', value);
   };
+
+  //@ts-expect-error
+  const sortedStats = topguns[team.discord].sort((a, b) => {
+    return b.defeated - a.defeated;
+  });
 
   const sortedPokemon = [...team.pokemon].sort((a, b) => {
     return returnMons(b).stats[sortBy].stat - returnMons(a).stats[sortBy].stat;
@@ -105,6 +112,7 @@ export default function TeamsView() {
               <SelectItem value='grid'>Pokémon</SelectItem>
               <SelectItem value='type'>Type Chart</SelectItem>
               <SelectItem value='schedule'>Scores</SelectItem>
+              <SelectItem value='stats'>Stats</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -149,6 +157,45 @@ export default function TeamsView() {
               ))}
             </div>
           </div>
+        </div>
+      )}
+
+      {view === 'stats' && (
+        <div className='player-stats-container'>
+          {sortedStats.map((pokemon: any, index: number) => {
+            return (
+              <div className='pokemon-stats-container' key={index}>
+                <div className='pokemon-stats-position'>{index + 1}</div>
+                <img
+                  className='card-picture'
+                  src={returnMons(pokemon.pokemon).sprite}
+                  alt=''
+                  width={50}
+                  height={50}
+                />
+                <div className='pokemon-stats-name-container'>
+                  <div className='pokemon-stats-name'>
+                    {nameSplit(pokemon.pokemon)}
+                  </div>
+                  {index > 3 ? (
+                    <div className='pokemon-stats-defeated'>
+                      Kills: {pokemon.defeated}
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+                {index <= 3 ? (
+                  <div className='pokemon-stats-defeated'>
+                    {pokemon.defeated}
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
+            );
+          })}
+          <div className='divider'></div>
         </div>
       )}
     </main>

@@ -759,6 +759,7 @@ main {
     var(--_type-color) 20%,
     hsl(var(--background))
   );
+  position: relative;
   display: flex;
   flex-flow: row nowrap;
   justify-content: start;
@@ -766,7 +767,7 @@ main {
   gap: 0.5rem;
   flex-direction: row;
   background-color: var(--muted-type);
-  padding: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
 }
 
 .type-matchup-data-container
@@ -1101,4 +1102,177 @@ main {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+}
+
+/* Trades */
+
+.team-trades {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.pokemon-trade {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  padding: 1rem 1.5rem;
+  width: max-content;
+  background-color: hsl(var(--muted));
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+}
+
+.team-container.trades {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.team-header-trades-player {
+  color: hsl(var(--muted-foreground));
+  opacity: 75%;
+}
+
+.team-trades-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  width: 100%;
+  max-width: var(--max-view-width);
+  padding: 2rem 1rem;
+  justify-content: start;
+  align-items: start;
+}
+
+/* Type Chart Hover */
+
+.ability-immunity {
+  position: absolute;
+  left: 101%;
+  top: 1%;
+  display: inline;
+  min-width: 30ch;
+  padding: 1rem;
+  opacity: 0;
+  scale: 0;
+  border-radius: var(--radius);
+  background-color: color-mix(
+    in hsl,
+    var(--_type-color) 30%,
+    hsl(var(--background))
+  );
+  pointer-events: none;
+  border: 1px solid
+    color-mix(in srgb, var(--_type-color) 30%, hsl(var(--background)));
+  transform-origin: top left;
+  transition: scale 300ms ease, opacity 300ms ease;
+}
+
+.type-matchup-pokemon:hover .ability-immunity {
+  opacity: 1;
+  scale: 1;
+  pointer-events: all;
+}
+
+.type-matchup-pokemon-name {
+  flex-grow: 1;
+}
+
+/* Pokemon Stats */
+
+.player-stats-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-self: start;
+  align-items: start;
+  gap: 1rem;
+  width: 100%;
+  max-width: var(--max-view-width);
+  padding: 2rem 1rem;
+}
+
+.pokemon-stats-container {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  min-width: calc(100% / 4 - 0.75rem);
+  justify-content: start;
+  align-items: center;
+  background-color: hsl(var(--muted));
+  padding: 1rem 1.5rem 1rem 1rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.pokemon-stats-container:nth-child(-n + 4) {
+  width: calc(25% - 1.5rem);
+  background-color: color-mix(in srgb, hsl(var(--muted)) 80%, var(--electric));
+  border: 1px solid color-mix(in srgb, hsl(var(--border)) 80%, var(--electric));
+  flex-grow: 1;
+  order: 1;
+}
+
+.pokemon-stats-container:nth-child(n + 5) {
+  order: 6;
+  flex-grow: 1;
+}
+
+.pokemon-stats-name-container {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+}
+
+.pokemon-stats-name {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.pokemon-stats-name-container .pokemon-stats-defeated {
+  position: relative;
+  right: 0rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: hsl(var(--muted-foreground));
+}
+
+.pokemon-stats-defeated {
+  position: absolute;
+  font-size: 3rem;
+  font-weight: 700;
+  right: 1.5rem;
+}
+
+.divider {
+  width: 100%;
+  flex-grow: 1;
+  height: 2px;
+  background-color: hsl(var(--border));
+  order: 5;
+}
+
+.pokemon-stats-position {
+  position: absolute;
+  left: 1rem;
+  font-size: 10rem;
+  font-weight: 700;
+  opacity: 0.125;
+  z-index: -1;
 }

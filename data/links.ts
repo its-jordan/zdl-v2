@@ -30,6 +30,10 @@ const navLinks = {
       title: 'Pokémon',
       path: '/offseason-2/pokemon',
     },
+    {
+      title: 'Trades',
+      path: '/offseason-2/trades',
+    },
     { title: 'Compare Pokémon', path: '/offseason-2/compare' },
   ],
 };

@@ -9,7 +9,6 @@ import {
 } from '@/components/ui/select';
 import WeeklySchedule from '@/data/offseason-2/schedule.json';
 import Link from 'next/link';
-import Image from 'next/image';
 import React, { Fragment, useEffect, useState } from 'react';
 import { teamArray } from '@/data/offseason-2/teams';
 
@@ -66,7 +65,6 @@ export default function Scores() {
           </SelectContent>
         </Select>
       </div>
-
       {weekArray.map((weekNumber, index) => {
         return (
           <Fragment key={index}>

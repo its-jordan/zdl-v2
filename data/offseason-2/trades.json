@@ -1,0 +1,50 @@
+{
+  "seanboyq": {
+    "removed": ["lokix", "krookodile", "mantine", "kyurem-black"],
+    "added": ["blastoise-mega", "hippowdown", "houndstone"]
+  },
+  "c0c0_": {
+    "removed": ["annihilape", "deoxys"],
+    "added": ["arceus-flying", "samurott-hisui"]
+  },
+  "tokotoro": {
+    "removed": ["enamorus-incarnate", "naganadel", "dhelmise"],
+    "added": ["enamorus-therian", "sandy-shocks", "spectrier"]
+  },
+  "its_jordan": {
+    "removed": ["kingambit", "dracovish"],
+    "added": ["lopunny-mega", "roaring-moon", "spidops"]
+  },
+  "ifurgat": {
+    "removed": ["chi-yu"],
+    "added": ["naganadel"]
+  },
+  "dtbaggins": {
+    "removed": ["iron-boulder", "iron-leaves"],
+    "added": ["iron-crown", "iron-jugulis", "xurkitree"]
+  },
+  "beachwatch": {
+    "removed": ["charizard-mega-y", "rabsca", "seismitoad"],
+    "added": ["kyurem-black"]
+  },
+  "jaegerpods": {
+    "removed": ["dragonite", "slowbro-mega", "swampert"],
+    "added": ["charizard-mega-y", "archaludon", "milotic"]
+  },
+  "lupa.mai": {
+    "removed": ["melmetal"],
+    "added": ["torkoal", "heliolisk", "jumpluff"]
+  },
+  "resolamxxy": {
+    "removed": ["gliscor"],
+    "added": ["ogerpon-cornerstone", "maushold"]
+  },
+  "revelreloaded": {
+    "removed": ["zygarde-complete", "quagsire", "pyukumuku"],
+    "added": ["dondozo", "umbreon", "deoxys-speed"]
+  },
+  "danknett": {
+    "removed": ["smeargle", "diance"],
+    "added": ["enamorus-incarnate"]
+  }
+}

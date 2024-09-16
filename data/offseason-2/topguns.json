@@ -1,0 +1,582 @@
+{
+  "danknett": [
+    {
+      "pokemon": "marshadow",
+      "defeated": 2
+    },
+    {
+      "pokemon": "shaymin-sky",
+      "defeated": 3
+    },
+    {
+      "pokemon": "dialga",
+      "defeated": 1
+    },
+    {
+      "pokemon": "zapdos",
+      "defeated": 0
+    },
+    {
+      "pokemon": "toxapex",
+      "defeated": 0
+    },
+    {
+      "pokemon": "cinderace",
+      "defeated": 3
+    },
+    {
+      "pokemon": "garchomp",
+      "defeated": 3
+    },
+    {
+      "pokemon": "enamorus-incarnate",
+      "defeated": 0
+    },
+    {
+      "pokemon": "diancie",
+      "defeated": 0
+    },
+    {
+      "pokemon": "smeargle",
+      "defeated": 0
+    }
+  ],
+  "revelreloaded": [
+    {
+      "pokemon": "deoxys-speed",
+      "defeated": 0
+    },
+    {
+      "pokemon": "gothitelle",
+      "defeated": 0
+    },
+    {
+      "pokemon": "blissey",
+      "defeated": 3
+    },
+    {
+      "pokemon": "ditto",
+      "defeated": 3
+    },
+    {
+      "pokemon": "corviknight",
+      "defeated": 1
+    },
+    {
+      "pokemon": "dondozo",
+      "defeated": 0
+    },
+    {
+      "pokemon": "clefable",
+      "defeated": 2
+    },
+    {
+      "pokemon": "sableye-mega",
+      "defeated": 4
+    },
+    {
+      "pokemon": "arceus-poison",
+      "defeated": 6
+    },
+    {
+      "pokemon": "umbreon",
+      "defeated": 0
+    },
+    {
+      "pokemon": "shedinja",
+      "defeated": 1
+    },
+    {
+      "pokemon": "diglett",
+      "defeated": 0
+    },
+    {
+      "pokemon": "zygarde-complete",
+      "defeated": 0
+    },
+    {
+      "pokemon": "quagsire",
+      "defeated": 0
+    },
+    {
+      "pokemon": "pyukumuku",
+      "defeated": 0
+    }
+  ],
+  "lupa.mai": [
+    {
+      "pokemon": "ho-oh",
+      "defeated": 6
+    },
+    {
+      "pokemon": "arceus-grass",
+      "defeated": 0
+    },
+    {
+      "pokemon": "lugia",
+      "defeated": 5
+    },
+    {
+      "pokemon": "torkoal",
+      "defeated": 0
+    },
+    {
+      "pokemon": "clodsire",
+      "defeated": 1
+    },
+    {
+      "pokemon": "darmanitan-galar-standard",
+      "defeated": 2
+    },
+    {
+      "pokemon": "walking-wake",
+      "defeated": 0
+    },
+    {
+      "pokemon": "rotom-heat",
+      "defeated": 2
+    },
+    {
+      "pokemon": "stakataka",
+      "defeated": 3
+    },
+    {
+      "pokemon": "heliolisk",
+      "defeated": 0
+    },
+    {
+      "pokemon": "melmetal",
+      "defeated": 0
+    }
+  ],
+  "c0c0_": [
+    {
+      "pokemon": "eternatus",
+      "defeated": 5
+    },
+    {
+      "pokemon": "mewtwo",
+      "defeated": 1
+    },
+    {
+      "pokemon": "calyrex-ice",
+      "defeated": 3
+    },
+    {
+      "pokemon": "ting-lu",
+      "defeated": 1
+    },
+    {
+      "pokemon": "arceus-flying",
+      "defeated": 0
+    },
+    {
+      "pokemon": "samurott-hisui",
+      "defeated": 0
+    },
+    {
+      "pokemon": "gholdengo",
+      "defeated": 1
+    },
+    {
+      "pokemon": "annihilape",
+      "defeated": 0
+    },
+    {
+      "pokemon": "deoxys-normal",
+      "defeated": 2
+    }
+  ],
+  "tokotoro": [
+    {
+      "pokemon": "mewtwo-mega-x",
+      "defeated": 5
+    },
+    {
+      "pokemon": "kyurem-white",
+      "defeated": 4
+    },
+    {
+      "pokemon": "zamazenta-crowned",
+      "defeated": 2
+    },
+    {
+      "pokemon": "spectrier",
+      "defeated": 0
+    },
+    {
+      "pokemon": "slowking",
+      "defeated": 0
+    },
+    {
+      "pokemon": "snorlax",
+      "defeated": 0
+    },
+    {
+      "pokemon": "heatran",
+      "defeated": 3
+    },
+    {
+      "pokemon": "enamorus-therian",
+      "defeated": 0
+    },
+    {
+      "pokemon": "sandy-shocks",
+      "defeated": 0
+    },
+    {
+      "pokemon": "enamorus-incarnate",
+      "defeated": 0
+    },
+    {
+      "pokemon": "naganadel",
+      "defeated": 0
+    },
+    {
+      "pokemon": "dhelmise",
+      "defeated": 0
+    }
+  ],
+  "resolamxxy": [
+    {
+      "pokemon": "kyogre",
+      "defeated": 4
+    },
+    {
+      "pokemon": "basculegion-male",
+      "defeated": 2
+    },
+    {
+      "pokemon": "solgaleo",
+      "defeated": 3
+    },
+    {
+      "pokemon": "ogerpon-cornerstone-mask",
+      "defeated": 0
+    },
+    {
+      "pokemon": "arceus-dragon",
+      "defeated": 7
+    },
+    {
+      "pokemon": "kangaskhan-mega",
+      "defeated": 2
+    },
+    {
+      "pokemon": "whimsicott",
+      "defeated": -1
+    },
+    {
+      "pokemon": "registeel",
+      "defeated": 0
+    },
+    {
+      "pokemon": "shuckle",
+      "defeated": -1
+    },
+    {
+      "pokemon": "jolteon",
+      "defeated": 4
+    },
+    {
+      "pokemon": "maushold",
+      "defeated": 0
+    },
+    {
+      "pokemon": "gliscor",
+      "defeated": 0
+    }
+  ],
+  "seanboyq": [
+    {
+      "pokemon": "rayquaza",
+      "defeated": 0
+    },
+    {
+      "pokemon": "arceus-fairy",
+      "defeated": 7
+    },
+    {
+      "pokemon": "cyclizar",
+      "defeated": 0
+    },
+    {
+      "pokemon": "blastoise-mega",
+      "defeated": 0
+    },
+    {
+      "pokemon": "pecharunt",
+      "defeated": 1
+    },
+    {
+      "pokemon": "hippowdon",
+      "defeated": 0
+    },
+    {
+      "pokemon": "magnezone",
+      "defeated": 2
+    },
+    {
+      "pokemon": "houndstone",
+      "defeated": 0
+    },
+    {
+      "pokemon": "espeon",
+      "defeated": 1
+    },
+    {
+      "pokemon": "kyurem-black",
+      "defeated": 3
+    },
+    {
+      "pokemon": "mantine",
+      "defeated": 0
+    },
+    {
+      "pokemon": "krookodile",
+      "defeated": 0
+    },
+    {
+      "pokemon": "lokix",
+      "defeated": 0
+    }
+  ],
+  "its_jordan": [
+    {
+      "pokemon": "arceus-steel",
+      "defeated": 5
+    },
+    {
+      "pokemon": "groudon",
+      "defeated": 0
+    },
+    {
+      "pokemon": "pheromosa",
+      "defeated": 1
+    },
+    {
+      "pokemon": "lopunny-mega",
+      "defeated": 0
+    },
+    {
+      "pokemon": "roaring-moon",
+      "defeated": 0
+    },
+    {
+      "pokemon": "tapu-lele",
+      "defeated": 5
+    },
+    {
+      "pokemon": "sneasler",
+      "defeated": 1
+    },
+    {
+      "pokemon": "piplup",
+      "defeated": 0
+    },
+    {
+      "pokemon": "spidops",
+      "defeated": 0
+    },
+    {
+      "pokemon": "kingambit",
+      "defeated": 2
+    },
+    {
+      "pokemon": "dracovish",
+      "defeated": 0
+    }
+  ],
+  "jaegerpods": [
+    {
+      "pokemon": "zacian",
+      "defeated": 3
+    },
+    {
+      "pokemon": "arceus-dark",
+      "defeated": 4
+    },
+    {
+      "pokemon": "great-tusk",
+      "defeated": 2
+    },
+    {
+      "pokemon": "gouging-fire",
+      "defeated": 4
+    },
+    {
+      "pokemon": "charizard-mega-y",
+      "defeated": 0
+    },
+    {
+      "pokemon": "archaludon",
+      "defeated": 0
+    },
+    {
+      "pokemon": "ribombee",
+      "defeated": 0
+    },
+    {
+      "pokemon": "skarmory",
+      "defeated": 0
+    },
+    {
+      "pokemon": "milotic",
+      "defeated": 0
+    },
+    {
+      "pokemon": "dragonite",
+      "defeated": 0
+    },
+    {
+      "pokemon": "slowbro-mega",
+      "defeated": 1
+    },
+    {
+      "pokemon": "swampert",
+      "defeated": 2
+    }
+  ],
+  "ifurgat": [
+    {
+      "pokemon": "magearna",
+      "defeated": 1
+    },
+    {
+      "pokemon": "giratina-origin",
+      "defeated": 4
+    },
+    {
+      "pokemon": "terapagos",
+      "defeated": 3
+    },
+    {
+      "pokemon": "landorus-therian",
+      "defeated": 6
+    },
+    {
+      "pokemon": "naganadel",
+      "defeated": 0
+    },
+    {
+      "pokemon": "alomomola",
+      "defeated": 0
+    },
+    {
+      "pokemon": "slurpuff",
+      "defeated": 0
+    },
+    {
+      "pokemon": "arceus-bug",
+      "defeated": 3
+    },
+    {
+      "pokemon": "regieleki",
+      "defeated": 0
+    },
+    {
+      "pokemon": "chi-yu",
+      "defeated": 2
+    }
+  ],
+  "beachwatch": [
+    {
+      "pokemon": "arceus-water",
+      "defeated": 12
+    },
+    {
+      "pokemon": "genesect",
+      "defeated": 1
+    },
+    {
+      "pokemon": "landorus-incarnate",
+      "defeated": 1
+    },
+    {
+      "pokemon": "flutter-mane",
+      "defeated": 6
+    },
+    {
+      "pokemon": "diancie-mega",
+      "defeated": 1
+    },
+    {
+      "pokemon": "kyurem-black",
+      "defeated": 0
+    },
+    {
+      "pokemon": "ursaluna-bloodmoon",
+      "defeated": 1
+    },
+    {
+      "pokemon": "zekrom",
+      "defeated": 0
+    },
+    {
+      "pokemon": "charizard-mega-y",
+      "defeated": 2
+    },
+    {
+      "pokemon": "seismitoad",
+      "defeated": 0
+    },
+    {
+      "pokemon": "rabsca",
+      "defeated": 0
+    }
+  ],
+  "dtbaggins": [
+    {
+      "pokemon": "dragapult",
+      "defeated": 0
+    },
+    {
+      "pokemon": "tapu-koko",
+      "defeated": 6
+    },
+    {
+      "pokemon": "iron-bundle",
+      "defeated": 3
+    },
+    {
+      "pokemon": "iron-valiant",
+      "defeated": 2
+    },
+    {
+      "pokemon": "iron-moth",
+      "defeated": 0
+    },
+    {
+      "pokemon": "iron-treads",
+      "defeated": 1
+    },
+    {
+      "pokemon": "iron-hands",
+      "defeated": 2
+    },
+    {
+      "pokemon": "orthworm",
+      "defeated": 0
+    },
+    {
+      "pokemon": "iron-crown",
+      "defeated": 0
+    },
+    {
+      "pokemon": "iron-jugulis",
+      "defeated": 0
+    },
+    {
+      "pokemon": "xurkitree",
+      "defeated": 0
+    },
+    {
+      "pokemon": "iron-boulder",
+      "defeated": 2
+    },
+    {
+      "pokemon": "iron-leaves",
+      "defeated": 0
+    }
+  ]
+}

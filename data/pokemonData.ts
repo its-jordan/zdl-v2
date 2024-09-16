@@ -30944,6 +30944,32 @@ export default function returnMons(e: string) {
       ],
     };
     return data;
+  } else if (e == 'ogerpon-cornerstone-mask') {
+    const data = {
+      name: 'ogerpon-cornerstone-mask',
+      abilities: ['sturdy'],
+      id: 10275,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10275.png',
+      types: ['rock', 'grass'],
+      weaknesses: [
+        'bug: 2x',
+        'electric: 0.5x',
+        'fighting: 2x',
+        'ice: 2x',
+        'normal: 0.5x',
+        'steel: 2x',
+      ],
+      stats: [
+        { stat: 80, name: 'HP' },
+        { stat: 120, name: 'ATT' },
+        { stat: 84, name: 'DEF' },
+        { stat: 60, name: 'SPA' },
+        { stat: 96, name: 'SPD' },
+        { stat: 110, name: 'SPE' },
+      ],
+    };
+    return data;
   } else {
     const data = {
       name: 'wooper',

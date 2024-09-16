@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { teamArray } from '@/data/offseason-2/teams';
 import returnMons from '@/data/pokemonData';
 import { Card, CardContent } from '@/components/ui/card';
@@ -13,14 +13,37 @@ import {
 } from '@/components/ui/select';
 import { nameSplit } from '@/util/nameSplit';
 import Image from 'next/image';
+import {
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  Radar,
+  Legend,
+  ResponsiveContainer,
+  Tooltip,
+} from 'recharts';
 
 type PokemonData = ReturnType<typeof returnMons>;
+type SpeedType = 'base' | 'max' | 'choicescarf' | 'tailwind';
+
+function calcMaxSpeed(e: number, item: string) {
+  const nature = 1.1;
+  const formula = (e * 2 + 99) * nature;
+  const speed =
+    item == 'choicescarf'
+      ? Math.floor(formula * 1.5 - 1)
+      : item == 'tailwind'
+      ? Math.floor(formula * 2 - 1)
+      : Math.floor(formula - 1);
+  return speed;
+}
 
 export default function PokemonTeamComparison() {
   const [team1, setTeam1] = useState('');
   const [team2, setTeam2] = useState('');
   const [pokemon1, setPokemon1] = useState('');
   const [pokemon2, setPokemon2] = useState('');
+  const [speedType, setSpeedType] = useState<SpeedType>('base');
 
   const getTeamData = (teamName: string) => {
     const team = teamArray[teamName as keyof typeof teamArray];
@@ -37,14 +60,63 @@ export default function PokemonTeamComparison() {
   const pokemon1Data = team1Data?.pokemonData.find((p) => p.name === pokemon1);
   const pokemon2Data = team2Data?.pokemonData.find((p) => p.name === pokemon2);
 
-  // const chartData =
-  //   pokemon1Data && pokemon2Data
-  //     ? pokemon1Data.stats.map((stat, index) => ({
-  //         stat: stat.name,
-  //         [pokemon1Data.name]: stat.stat,
-  //         [pokemon2Data.name]: pokemon2Data.stats[0].stat,
-  //       }))
-  //     : [];
+  const formatChartData = useMemo(
+    () => (pokemon1: PokemonData, pokemon2: PokemonData) => {
+      const statNames = ['HP', 'ATT', 'DEF', 'SPA', 'SPD', 'SPE'];
+      return statNames.map((stat, index) => {
+        if (stat === 'SPE') {
+          const getSpeedValue = (pokemon: PokemonData) => {
+            const baseSpeed = pokemon.stats[5].stat;
+            switch (speedType) {
+              case 'max':
+                return calcMaxSpeed(baseSpeed, '');
+              case 'choicescarf':
+                return calcMaxSpeed(baseSpeed, 'choicescarf');
+              case 'tailwind':
+                return calcMaxSpeed(baseSpeed, 'tailwind');
+              default:
+                return baseSpeed;
+            }
+          };
+          return {
+            stat,
+            [pokemon1.name]: getSpeedValue(pokemon1),
+            [pokemon2.name]: getSpeedValue(pokemon2),
+          };
+        }
+        return {
+          stat,
+          [pokemon1.name]: pokemon1.stats[index].stat,
+          [pokemon2.name]: pokemon2.stats[index].stat,
+        };
+      });
+    },
+    [speedType]
+  );
+
+  const chartData = useMemo(
+    () =>
+      pokemon1Data && pokemon2Data
+        ? formatChartData(pokemon1Data, pokemon2Data)
+        : [],
+    [pokemon1Data, pokemon2Data, formatChartData]
+  );
+
+  const CustomTooltip = ({ active, payload }: any) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className='bg-background border border-border rounded p-2 shadow-md'>
+          <p className='font-bold'>{payload[0].payload.stat}</p>
+          {payload.map((entry: any, index: number) => (
+            <p key={index} style={{ color: entry.color }}>
+              {nameSplit(entry.name)}: {entry.value}
+            </p>
+          ))}
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <Card className='w-full max-w-4xl mx-auto'>
@@ -151,29 +223,52 @@ export default function PokemonTeamComparison() {
           )}
         </div>
         {pokemon1Data && pokemon2Data && (
-          <div className='pokemon-comparison-mons'>
-            <PokemonDisplay pokemon={pokemon1Data} opponent={pokemon2Data} />
-            <PokemonDisplay pokemon={pokemon2Data} opponent={pokemon1Data} />
-          </div>
+          <>
+            <div className='pokemon-comparison-mons'>
+              <PokemonDisplay pokemon={pokemon1Data} opponent={pokemon2Data} />
+              <PokemonDisplay pokemon={pokemon2Data} opponent={pokemon1Data} />
+            </div>
+            <div className='mt-4'>
+              <Select
+                value={speedType}
+                onValueChange={(value) => setSpeedType(value as SpeedType)}>
+                <SelectTrigger className='w-[180px]'>
+                  <SelectValue placeholder='Select speed type' />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value='base'>Base Speed</SelectItem>
+                  <SelectItem value='max'>Max Speed</SelectItem>
+                  <SelectItem value='choicescarf'>Choice Scarf</SelectItem>
+                  <SelectItem value='tailwind'>Tailwind</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className='mt-4 h-[400px]'>
+              <ResponsiveContainer width='100%' height='100%'>
+                <RadarChart data={chartData}>
+                  <PolarGrid />
+                  <PolarAngleAxis dataKey='stat' />
+                  <Radar
+                    name={nameSplit(pokemon1Data.name)}
+                    dataKey={pokemon1Data.name}
+                    stroke={`var(--${returnMons(pokemon1Data.name).types[0]})`}
+                    fill={`var(--${returnMons(pokemon1Data.name).types[0]})`}
+                    fillOpacity={0.5}
+                  />
+                  <Radar
+                    name={nameSplit(pokemon2Data.name)}
+                    dataKey={pokemon2Data.name}
+                    stroke={`var(--${returnMons(pokemon2Data.name).types[0]})`}
+                    fill={`var(--${returnMons(pokemon2Data.name).types[0]})`}
+                    fillOpacity={0.5}
+                  />
+                  <Tooltip content={<CustomTooltip />} />
+                  <Legend />
+                </RadarChart>
+              </ResponsiveContainer>
+            </div>
+          </>
         )}
-        {/* {chartData.length > 0 && (
-          <ChartContainer className='h-[300px] mt-4'>
-            <Radar
-              data={chartData}
-              dataKey={pokemon1Data?.name}
-              stroke='hsl(var(--primary))'
-              fill='hsl(var(--primary))'
-              fillOpacity={0.6}
-            />
-            <Radar
-              data={chartData}
-              dataKey={pokemon2Data?.name}
-              stroke='hsl(var(--secondary))'
-              fill='hsl(var(--secondary))'
-              fillOpacity={0.6}
-            />
-          </ChartContainer>
-        )} */}
       </CardContent>
     </Card>
   );
