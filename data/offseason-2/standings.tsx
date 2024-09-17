@@ -81,7 +81,7 @@ export default function Standings() {
 
   function calculateGamesBehind(record: TeamRecord) {
     const wins = record.wins;
-    const maxWins = 3;
+    const maxWins = 4;
     const gamesbehind = maxWins - wins;
     return gamesbehind == 0 ? '-' : gamesbehind;
   }
