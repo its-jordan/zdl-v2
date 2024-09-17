@@ -322,6 +322,15 @@ main {
 }
 
 .card-type-icons {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.pokemon-type-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.5rem;
   width: 30px;
   height: 30px;
@@ -611,6 +620,7 @@ main {
 
 .team-picture {
   border-radius: 100vw;
+  border: 1px solid hsl(var(--border));
   height: 100%;
   aspect-ratio: 1 / 1;
 }
@@ -751,7 +761,7 @@ main {
 }
 
 .type-icon-container.type-matchup:last-of-type .pokemon-type-icon {
-  border-radius: 0 var(--radius) 0 0;
+  border-radius: 0 calc(var(--radius) - 0.15rem) 0 0;
 }
 .type-matchup-pokemon {
   --muted-type: color-mix(
@@ -793,12 +803,12 @@ main {
   border-radius: 0.5rem;
   font-size: 0.875rem;
   background-color: color-mix(
-    in hsl,
-    var(--_type-color) 30%,
-    hsl(var(--background))
+    in srgb,
+    var(--_type-color) 50%,
+    hsl(var(--muted))
   );
   border: 1px solid
-    color-mix(in srgb, var(--_type-color) 50%, hsl(var(--background)));
+    color-mix(in srgb, var(--_type-color) 80%, hsl(var(--border)));
   backdrop-filter: blur(5px);
   opacity: 0;
   scale: 0;
@@ -808,6 +818,38 @@ main {
 }
 
 .type-icon-container:hover .type_title {
+  opacity: 1;
+  scale: 1;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+}
+
+.card-type-icons .type_title {
+  position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  top: -3rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  background-color: color-mix(
+    in srgb,
+    var(--_type-color) 50%,
+    hsl(var(--muted))
+  );
+  border: 1px solid
+    color-mix(in srgb, var(--_type-color) 80%, hsl(var(--border)));
+  backdrop-filter: blur(5px);
+  transform: translate(-25%);
+  opacity: 0;
+  scale: 0;
+  transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-origin: bottom center;
+  width: max-content;
+}
+
+.card-type-icons:hover .type_title {
   opacity: 1;
   scale: 1;
   z-index: 100;
@@ -1168,13 +1210,13 @@ main {
   scale: 0;
   border-radius: var(--radius);
   background-color: color-mix(
-    in hsl,
-    var(--_type-color) 30%,
-    hsl(var(--background))
+    in srgb,
+    var(--_type-color) 20%,
+    hsl(var(--muted))
   );
   pointer-events: none;
   border: 1px solid
-    color-mix(in srgb, var(--_type-color) 30%, hsl(var(--background)));
+    color-mix(in srgb, var(--_type-color) 50%, hsl(var(--border)));
   transform-origin: top left;
   transition: scale 300ms ease, opacity 300ms ease;
 }
@@ -1275,4 +1317,70 @@ main {
   font-weight: 700;
   opacity: 0.125;
   z-index: -1;
+}
+
+/* All Stats */
+
+.all-stats-container {
+  display: block;
+  margin: 0;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: var(--max-view-width);
+}
+
+.table-player {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: center;
+  max-width: max-content;
+  height: 100%;
+  gap: 1rem;
+}
+
+.table-player-team {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.table-player-discord {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: hsl(var(--muted-foreground));
+}
+
+.table-pokemon {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: center;
+  max-width: max-content;
+  height: 100%;
+  gap: 1rem;
+}
+
+.card-picture.pokemon {
+  background-color: transparent;
+  border: 1px solid hsl(var(--border));
+  padding: 0.5rem;
+  background-color: color-mix(
+    in srgb,
+    hsl(var(--muted)) 60%,
+    var(--_type-color)
+  );
+  border: 1px solid
+    color-mix(in srgb, hsl(var(--border)) 20%, var(--_type-color));
+}
+
+.card-picture.table {
+  background-color: transparent;
+}
+
+.card-type-icons-table {
+  padding: 0.5rem;
+  width: 30px;
+  height: 30px;
+  background-color: var(--_type-color);
+  border-radius: 100vw;
 }

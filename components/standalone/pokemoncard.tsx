@@ -29,9 +29,9 @@ export default function PokemonCard({ pokemon }: CardData) {
     <div className='card' data-type={data.types[0]}>
       <div className='card-top'>
         <img
-          className='card-picture'
+          className='card-picture pokemon'
           src={data.sprite}
-          alt=''
+          alt={`${nameSplit(data.name)}'s sprite`}
           width={50}
           height={50}
         />
@@ -40,7 +40,16 @@ export default function PokemonCard({ pokemon }: CardData) {
           {data.types.map((type, index) => {
             return (
               <div key={index} className='card-type-icons' data-type={type}>
-                <img src={`/icons/${type}.svg`} width={50} height={50} alt='' />
+                <img
+                  src={`/icons/${type}.svg`}
+                  width={50}
+                  height={50}
+                  alt=''
+                  className='pokemon-type-icon'
+                />
+                <div className='hover-only type_title' data-type={type}>
+                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                </div>
               </div>
             );
           })}

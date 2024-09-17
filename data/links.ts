@@ -31,6 +31,10 @@ const navLinks = {
       path: '/offseason-2/pokemon',
     },
     {
+      title: 'Stats',
+      path: '/offseason-2/stats',
+    },
+    {
       title: 'Trades',
       path: '/offseason-2/trades',
     },

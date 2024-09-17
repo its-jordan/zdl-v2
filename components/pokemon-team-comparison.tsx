@@ -326,7 +326,10 @@ function PokemonDisplay({
         <div className='card-type'>
           {pokemon.types.map((type, index) => {
             return (
-              <div key={index} className='card-type-icons' data-type={type}>
+              <div
+                key={index}
+                className='card-type-icons-table'
+                data-type={type}>
                 <img src={`/icons/${type}.svg`} width={50} height={50} alt='' />
               </div>
             );
