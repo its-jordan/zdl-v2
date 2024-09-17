@@ -47,7 +47,7 @@ export default function PlayerSchedule({
                         width={50}
                         height={50}
                         // @ts-ignore
-                        alt={teamArray[playerMatch.player1].team}
+                        alt={teamArray[playerMatch.player1].discord}
                       />
                       <div className='player-name-container'>
                         <div className='player-team-name'>
@@ -59,7 +59,7 @@ export default function PlayerSchedule({
                         <div className='player-name'>
                           {
                             // @ts-ignore
-                            teamArray[playerMatch.player1].name
+                            teamArray[playerMatch.player1].discord
                           }
                         </div>
                       </div>
@@ -90,7 +90,7 @@ export default function PlayerSchedule({
                         width={50}
                         height={50}
                         // @ts-ignore
-                        alt={teamArray[playerMatch.player2].team}
+                        alt={teamArray[playerMatch.player2].discord}
                       />
                       <div className='player-name-container'>
                         <div className='player-team-name'>
@@ -102,7 +102,7 @@ export default function PlayerSchedule({
                         <div className='player-name'>
                           {
                             // @ts-ignore
-                            teamArray[playerMatch.player2].name
+                            teamArray[playerMatch.player2].discord
                           }
                         </div>
                       </div>

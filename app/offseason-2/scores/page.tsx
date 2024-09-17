@@ -87,7 +87,7 @@ export default function Scores() {
                                 width={50}
                                 height={50}
                                 // @ts-expect-error
-                                alt={teamArray[match.player1].team}
+                                alt={teamArray[match.player1].discord}
                               />
                               <div className='player-name-container'>
                                 <div className='player-team-name'>
@@ -99,7 +99,7 @@ export default function Scores() {
                                 <div className='player-name'>
                                   {
                                     // @ts-expect-error
-                                    teamArray[match.player1].name
+                                    teamArray[match.player1].discord
                                   }
                                 </div>
                               </div>
@@ -123,7 +123,7 @@ export default function Scores() {
                                 width={50}
                                 height={50}
                                 // @ts-expect-error
-                                alt={teamArray[match.player2].team}
+                                alt={teamArray[match.player2].discord}
                               />
                               <div className='player-name-container'>
                                 <div className='player-team-name'>
@@ -135,7 +135,7 @@ export default function Scores() {
                                 <div className='player-name'>
                                   {
                                     // @ts-expect-error
-                                    teamArray[match.player2].name
+                                    teamArray[match.player2].discord
                                   }
                                 </div>
                               </div>

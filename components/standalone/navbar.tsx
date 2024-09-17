@@ -58,7 +58,12 @@ const Navbar = () => {
       <div className='internal-nav-container'>
         <div className='draft-league-logo'>
           <div className='draft-league-text'>ZDL</div>
-          <div className='hover_only'>Offseason 2</div>
+          <div className='hover_only'>
+            {selectedCategory.charAt(0).toUpperCase() +
+              selectedCategory.split('-')[0].slice(1) +
+              ' ' +
+              selectedCategory.split('-')[1]}
+          </div>
         </div>
         <NavigationMenu className='navigation-list-container'>
           <NavigationMenuList>
