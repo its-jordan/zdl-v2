@@ -3,6 +3,13 @@
 import { useState } from 'react';
 import { teamArrayMappable } from '@/data/offseason-2/teams';
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import {
   Table,
   TableBody,
   TableCell,
@@ -10,30 +17,33 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-import Image from 'next/image';
 import schedule from '@/data/offseason-2/schedule.json';
+import topguns from '@/data/offseason-2/topguns.json';
 
 type TeamRecord = {
   wins: number;
   losses: number;
   streak: number;
+  pokemonDefeated: number;
 };
 
-type SortOption = 'winPercentage' | 'wins' | 'losses' | 'streak';
+type SortOption =
+  | 'winPercentage'
+  | 'wins'
+  | 'losses'
+  | 'streak'
+  | 'pokemonDefeated';
 
 function calculateRecords(): Record<string, TeamRecord> {
   const records: Record<string, TeamRecord> = {};
 
   teamArrayMappable.forEach((team) => {
-    records[team.discord] = { wins: 0, losses: 0, streak: 0 };
+    records[team.discord] = {
+      wins: 0,
+      losses: 0,
+      streak: 0,
+      pokemonDefeated: 0,
+    };
   });
 
   Object.values(schedule).forEach((week) => {
@@ -65,6 +75,14 @@ function calculateRecords(): Record<string, TeamRecord> {
         }
       }
     });
+  });
+
+  // Calculate total Pokemon defeated for each team
+  Object.entries(topguns).forEach(([discord, pokemon]) => {
+    records[discord].pokemonDefeated = pokemon.reduce(
+      (total, p) => total + Math.max(0, p.defeated),
+      0
+    );
   });
 
   return records;
@@ -103,6 +121,11 @@ export default function Standings() {
         return (
           bRecord.streak - aRecord.streak || bWinPercentage - aWinPercentage
         );
+      case 'pokemonDefeated':
+        return (
+          bRecord.pokemonDefeated - aRecord.pokemonDefeated ||
+          bWinPercentage - aWinPercentage
+        );
       case 'winPercentage':
       default:
         return bWinPercentage - aWinPercentage || bRecord.wins - aRecord.wins;
@@ -118,36 +141,42 @@ export default function Standings() {
         <div className=''>
           <Select onValueChange={(value: SortOption) => setSortOption(value)}>
             <SelectTrigger className='w-[180px]'>
-              <SelectValue placeholder='Sort by' />
+              <SelectValue placeholder='Sort by Wins' />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value='winPercentage'>Win Percentage</SelectItem>
               <SelectItem value='wins'>Wins</SelectItem>
               <SelectItem value='losses'>Losses</SelectItem>
+              <SelectItem value='winPercentage'>Win Percentage</SelectItem>
               <SelectItem value='streak'>Streak</SelectItem>
+              <SelectItem value='pokemonDefeated'>Kills</SelectItem>
             </SelectContent>
           </Select>
         </div>
       </div>
       <div className='standings-container'>
-        <div className='standings-header'>
-          <div className='standings-team-content rank'></div>
-          <div className='standings-team-content team'>Team</div>
-          <div className='standings-team-content wins'>W</div>
-          <div className='standings-team-content losses'>L</div>
-          <div className='standings-team-content winpercentage'>PCT</div>
-          <div className='standings-team-content gb'>GB</div>
-          <div className='standings-team-content streak'>STRK</div>
-        </div>
-        <div className='standings-content'>
-          {sortedTeams.map((team, index) => {
-            const record = records[team.discord];
-            const winPercentage = calculateWinPercentage(record);
-            return (
-              <div className='standings-team' key={team.discord}>
-                <div className='standings-team-content rank'>{index + 1}</div>
-                <div className='standings-team-content team'>
-                  <div className='standings-team-container'>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Team</TableHead>
+              <TableHead></TableHead>
+              <TableHead></TableHead>
+              <TableHead></TableHead>
+              <TableHead>W</TableHead>
+              <TableHead>L</TableHead>
+              <TableHead>PCT</TableHead>
+              <TableHead>GB</TableHead>
+              <TableHead>STRK</TableHead>
+              <TableHead>KILLS</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {sortedTeams.map((team, index) => {
+              const record = records[team.discord];
+              const winPercentage = calculateWinPercentage(record);
+              return (
+                <TableRow key={team.discord}>
+                  <TableCell>{index + 1}</TableCell>
+                  <TableCell>
                     <img
                       src={team.picture}
                       alt={`${team.name}'s avatar`}
@@ -155,37 +184,30 @@ export default function Standings() {
                       height={32}
                       className='standings-team-avatar'
                     />
-                    <div className='standings-team-name'>
-                      <div className='standings-team-team'>{team.team}</div>
-                      <div className='standings-team-discord'>
-                        {team.discord}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className='standings-team-content wins'>{record.wins}</div>
-                <div className='standings-team-content losses'>
-                  {record.losses}
-                </div>
-                <div className='standings-team-content winpercentage'>
-                  {winPercentage == 1.0
-                    ? winPercentage.toFixed(3)
-                    : winPercentage.toFixed(3).toString().slice(1)}
-                </div>
-                <div className='standings-team-content gb'>
-                  {calculateGamesBehind(record)}
-                </div>
-                <div className='standings-team-content streak'>
-                  {record.streak > 0
-                    ? `W${record.streak}`
-                    : record.streak < 0
-                    ? `L${Math.abs(record.streak)}`
-                    : '-'}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                  </TableCell>
+                  <TableCell>{team.team}</TableCell>
+                  <TableCell>{team.discord}</TableCell>
+                  <TableCell>{record.wins}</TableCell>
+                  <TableCell>{record.losses}</TableCell>
+                  <TableCell>
+                    {winPercentage == 1.0
+                      ? winPercentage.toFixed(3)
+                      : winPercentage.toFixed(3).toString().slice(1)}
+                  </TableCell>
+                  <TableCell>{calculateGamesBehind(record)}</TableCell>
+                  <TableCell>
+                    {record.streak > 0
+                      ? `W${record.streak}`
+                      : record.streak < 0
+                      ? `L${Math.abs(record.streak)}`
+                      : '-'}
+                  </TableCell>
+                  <TableCell>{record.pokemonDefeated}</TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
       </div>
     </>
   );

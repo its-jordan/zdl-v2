@@ -63,7 +63,7 @@ export default function PokemonStats() {
               setSortBy(value as 'team' | 'pokemon' | 'defeated')
             }>
             <SelectTrigger className='w-[180px]'>
-              <SelectValue placeholder='Sort by' />
+              <SelectValue placeholder='Sort by Defeated' />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value='defeated'>Sort by Defeated</SelectItem>

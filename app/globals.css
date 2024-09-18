@@ -1065,11 +1065,13 @@ main {
 .standings-team-content.losses,
 .standings-team-content.winpercentage,
 .standings-team-content.gb,
-.standings-team-content.streak {
+.standings-team-content.streak,
+.standings-team-content.pokemonDefeated {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 60px;
+  flex-grow: 1;
   height: 100%;
 }
 
@@ -1107,10 +1109,11 @@ main {
 }
 
 .standings-team-avatar {
-  width: 45px;
-  height: 45px;
+  width: 30px;
+  height: 30px;
   aspect-ratio: 1 / 1;
   border-radius: 100vw;
+  border: 1px solid hsl(var(--border));
 }
 
 .standings-team-container {
