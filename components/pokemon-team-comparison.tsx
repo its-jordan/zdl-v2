@@ -12,7 +12,6 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { nameSplit } from '@/util/nameSplit';
-import Image from 'next/image';
 import {
   RadarChart,
   PolarGrid,
@@ -44,7 +43,8 @@ export default function PokemonTeamComparison() {
   const [team2, setTeam2] = useState('');
   const [pokemon1, setPokemon1] = useState('');
   const [pokemon2, setPokemon2] = useState('');
-  const [speedType, setSpeedType] = useState<SpeedType>('base');
+  const [speedType1, setSpeedType1] = useState<SpeedType>('base');
+  const [speedType2, setSpeedType2] = useState<SpeedType>('base');
 
   // Load saved selections from localStorage on component mount
   useEffect(() => {
@@ -52,13 +52,15 @@ export default function PokemonTeamComparison() {
     const savedTeam2 = localStorage.getItem('team2');
     const savedPokemon1 = localStorage.getItem('pokemon1');
     const savedPokemon2 = localStorage.getItem('pokemon2');
-    const savedSpeedType = localStorage.getItem('speedType') as SpeedType;
+    const savedSpeedType1 = localStorage.getItem('speedType1') as SpeedType;
+    const savedSpeedType2 = localStorage.getItem('speedType2') as SpeedType;
 
     if (savedTeam1) setTeam1(savedTeam1);
     if (savedTeam2) setTeam2(savedTeam2);
     if (savedPokemon1) setPokemon1(savedPokemon1);
     if (savedPokemon2) setPokemon2(savedPokemon2);
-    if (savedSpeedType) setSpeedType(savedSpeedType);
+    if (savedSpeedType1) setSpeedType1(savedSpeedType1);
+    if (savedSpeedType2) setSpeedType2(savedSpeedType2);
   }, []);
 
   // Save selections to localStorage whenever they change
@@ -67,8 +69,9 @@ export default function PokemonTeamComparison() {
     localStorage.setItem('team2', team2);
     localStorage.setItem('pokemon1', pokemon1);
     localStorage.setItem('pokemon2', pokemon2);
-    localStorage.setItem('speedType', speedType);
-  }, [team1, team2, pokemon1, pokemon2, speedType]);
+    localStorage.setItem('speedType1', speedType1);
+    localStorage.setItem('speedType2', speedType2);
+  }, [team1, team2, pokemon1, pokemon2, speedType1, speedType2]);
 
   const getTeamData = (teamName: string) => {
     const team = teamArray[teamName as keyof typeof teamArray];
@@ -90,7 +93,10 @@ export default function PokemonTeamComparison() {
       const statNames = ['HP', 'ATT', 'DEF', 'SPA', 'SPD', 'SPE'];
       return statNames.map((stat, index) => {
         if (stat === 'SPE') {
-          const getSpeedValue = (pokemon: PokemonData) => {
+          const getSpeedValue = (
+            pokemon: PokemonData,
+            speedType: SpeedType
+          ) => {
             const baseSpeed = pokemon.stats[5].stat;
             switch (speedType) {
               case 'max':
@@ -105,8 +111,8 @@ export default function PokemonTeamComparison() {
           };
           return {
             stat,
-            [pokemon1.name]: getSpeedValue(pokemon1),
-            [pokemon2.name]: getSpeedValue(pokemon2),
+            [pokemon1.name]: getSpeedValue(pokemon1, speedType1),
+            [pokemon2.name]: getSpeedValue(pokemon2, speedType2),
           };
         }
         return {
@@ -116,7 +122,7 @@ export default function PokemonTeamComparison() {
         };
       });
     },
-    [speedType]
+    [speedType1, speedType2]
   );
 
   const chartData = useMemo(
@@ -253,10 +259,23 @@ export default function PokemonTeamComparison() {
               <PokemonDisplay pokemon={pokemon1Data} opponent={pokemon2Data} />
               <PokemonDisplay pokemon={pokemon2Data} opponent={pokemon1Data} />
             </div>
-            <div className='mt-4'>
+            <div className='mt-4 flex justify-between'>
               <Select
-                value={speedType}
-                onValueChange={(value) => setSpeedType(value as SpeedType)}>
+                value={speedType1}
+                onValueChange={(value) => setSpeedType1(value as SpeedType)}>
+                <SelectTrigger className='w-[180px]'>
+                  <SelectValue placeholder='Select speed type' />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value='base'>Base Speed</SelectItem>
+                  <SelectItem value='max'>Max Speed</SelectItem>
+                  <SelectItem value='choicescarf'>Choice Scarf</SelectItem>
+                  <SelectItem value='tailwind'>Tailwind</SelectItem>
+                </SelectContent>
+              </Select>
+              <Select
+                value={speedType2}
+                onValueChange={(value) => setSpeedType2(value as SpeedType)}>
                 <SelectTrigger className='w-[180px]'>
                   <SelectValue placeholder='Select speed type' />
                 </SelectTrigger>
