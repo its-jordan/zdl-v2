@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { teamArray } from '@/data/offseason-2/teams';
 import returnMons from '@/data/pokemonData';
 import { Card, CardContent } from '@/components/ui/card';
@@ -44,6 +44,30 @@ export default function PokemonTeamComparison() {
   const [pokemon1, setPokemon1] = useState('');
   const [pokemon2, setPokemon2] = useState('');
   const [speedType, setSpeedType] = useState<SpeedType>('base');
+
+  // Load saved selections from localStorage on component mount
+  useEffect(() => {
+    const savedTeam1 = localStorage.getItem('team1');
+    const savedTeam2 = localStorage.getItem('team2');
+    const savedPokemon1 = localStorage.getItem('pokemon1');
+    const savedPokemon2 = localStorage.getItem('pokemon2');
+    const savedSpeedType = localStorage.getItem('speedType') as SpeedType;
+
+    if (savedTeam1) setTeam1(savedTeam1);
+    if (savedTeam2) setTeam2(savedTeam2);
+    if (savedPokemon1) setPokemon1(savedPokemon1);
+    if (savedPokemon2) setPokemon2(savedPokemon2);
+    if (savedSpeedType) setSpeedType(savedSpeedType);
+  }, []);
+
+  // Save selections to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('team1', team1);
+    localStorage.setItem('team2', team2);
+    localStorage.setItem('pokemon1', pokemon1);
+    localStorage.setItem('pokemon2', pokemon2);
+    localStorage.setItem('speedType', speedType);
+  }, [team1, team2, pokemon1, pokemon2, speedType]);
 
   const getTeamData = (teamName: string) => {
     const team = teamArray[teamName as keyof typeof teamArray];
@@ -124,7 +148,7 @@ export default function PokemonTeamComparison() {
         <h1 className='text-2xl font-bold mb-4'>Pokémon Comparison</h1>
         <div className='grid grid-cols-2 gap-4 mb-4'>
           <div>
-            <Select onValueChange={setTeam1}>
+            <Select value={team1} onValueChange={setTeam1}>
               <SelectTrigger>
                 <SelectValue placeholder='Select Team 1' />
               </SelectTrigger>
@@ -157,7 +181,7 @@ export default function PokemonTeamComparison() {
             </Select>
           </div>
           <div>
-            <Select onValueChange={setTeam2}>
+            <Select value={team2} onValueChange={setTeam2}>
               <SelectTrigger>
                 <SelectValue placeholder='Select Team 2' />
               </SelectTrigger>
@@ -191,7 +215,7 @@ export default function PokemonTeamComparison() {
           </div>
           {team1Data && (
             <div>
-              <Select onValueChange={setPokemon1}>
+              <Select value={pokemon1} onValueChange={setPokemon1}>
                 <SelectTrigger>
                   <SelectValue placeholder='Select Pokémon 1' />
                 </SelectTrigger>
@@ -207,7 +231,7 @@ export default function PokemonTeamComparison() {
           )}
           {team2Data && (
             <div>
-              <Select onValueChange={setPokemon2}>
+              <Select value={pokemon2} onValueChange={setPokemon2}>
                 <SelectTrigger>
                   <SelectValue placeholder='Select Pokémon 2' />
                 </SelectTrigger>
