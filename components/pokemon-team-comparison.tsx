@@ -22,6 +22,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from 'recharts';
+import Link from 'next/link';
 
 type PokemonData = ReturnType<typeof returnMons>;
 type SpeedType = 'base' | 'max' | 'choicescarf' | 'tailwind';
@@ -346,7 +347,12 @@ function PokemonDisplay({
           width={50}
           height={50}
         />
-        <div className='card-title'>{nameSplit(pokemon.name)}</div>
+        <Link
+          className='card-title'
+          href={`https://www.smogon.com/dex/sv/pokemon/${pokemon.name}`}
+          target='_blank'>
+          {nameSplit(pokemon.name)}
+        </Link>
         <div className='card-type'>
           {pokemon.types.map((type, index) => {
             return (

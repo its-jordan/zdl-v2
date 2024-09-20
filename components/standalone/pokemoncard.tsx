@@ -38,7 +38,8 @@ export default function PokemonCard({ pokemon }: CardData) {
         />
         <Link
           className='card-title'
-          href={`https://www.smogon.com/dex/sv/pokemon/${data.name}`}>
+          href={`https://www.smogon.com/dex/sv/pokemon/${data.name}`}
+          target='_blank'>
           {nameSplit(data.name)}
         </Link>
         <div className='card-type'>
