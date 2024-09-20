@@ -1,6 +1,7 @@
 import returnMons from '@/data/pokemonData';
 import { nameSplit } from '@/util/nameSplit';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 interface CardData {
@@ -35,7 +36,11 @@ export default function PokemonCard({ pokemon }: CardData) {
           width={50}
           height={50}
         />
-        <div className='card-title'>{nameSplit(data.name)}</div>
+        <Link
+          className='card-title'
+          href={`https://www.smogon.com/dex/sv/pokemon/${data.name}`}>
+          {nameSplit(data.name)}
+        </Link>
         <div className='card-type'>
           {data.types.map((type, index) => {
             return (
