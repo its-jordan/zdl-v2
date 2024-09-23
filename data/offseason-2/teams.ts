@@ -1,4 +1,4 @@
-import rosters from '@/data/offseason-2/rosters.json';
+import rosters from './rosters.json';
 import { usePathname } from 'next/navigation';
 
 export const teamArray = {

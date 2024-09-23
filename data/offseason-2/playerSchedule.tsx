@@ -1,6 +1,5 @@
 import React from 'react';
-import { teamArray } from '@/data/offseason-2/teams';
-import Image from 'next/image';
+import { teamArray } from './teams';
 import Link from 'next/link';
 
 type Match = {

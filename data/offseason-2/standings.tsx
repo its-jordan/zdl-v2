@@ -17,8 +17,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import schedule from '@/data/offseason-2/schedule.json';
-import topguns from '@/data/offseason-2/topguns.json';
+import schedule from './schedule.json';
+import topguns from './topguns.json';
+import calcMaxWins from './calcMaxWins';
 
 type TeamRecord = {
   wins: number;
@@ -99,7 +100,7 @@ export default function Standings() {
 
   function calculateGamesBehind(record: TeamRecord) {
     const wins = record.wins;
-    const maxWins = 4;
+    const maxWins = calcMaxWins();
     const gamesbehind = maxWins - wins;
     return gamesbehind == 0 ? '-' : gamesbehind;
   }
