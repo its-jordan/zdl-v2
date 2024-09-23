@@ -2,15 +2,15 @@
   "danknett": [
     {
       "pokemon": "marshadow",
-      "defeated": 2
-    },
-    {
-      "pokemon": "shaymin-sky",
       "defeated": 3
     },
     {
+      "pokemon": "shaymin-sky",
+      "defeated": 5
+    },
+    {
       "pokemon": "dialga",
-      "defeated": 1
+      "defeated": 3
     },
     {
       "pokemon": "zapdos",
@@ -26,7 +26,7 @@
     },
     {
       "pokemon": "garchomp",
-      "defeated": 3
+      "defeated": 4
     },
     {
       "pokemon": "enamorus-incarnate",
@@ -44,7 +44,7 @@
   "revelreloaded": [
     {
       "pokemon": "deoxys-speed",
-      "defeated": 0
+      "defeated": 1
     },
     {
       "pokemon": "gothitelle",
@@ -52,7 +52,7 @@
     },
     {
       "pokemon": "blissey",
-      "defeated": 3
+      "defeated": 5
     },
     {
       "pokemon": "ditto",
@@ -64,7 +64,7 @@
     },
     {
       "pokemon": "dondozo",
-      "defeated": 0
+      "defeated": 2
     },
     {
       "pokemon": "clefable",
@@ -114,7 +114,7 @@
     },
     {
       "pokemon": "lugia",
-      "defeated": 5
+      "defeated": 8
     },
     {
       "pokemon": "torkoal",
@@ -122,7 +122,7 @@
     },
     {
       "pokemon": "clodsire",
-      "defeated": 1
+      "defeated": 2
     },
     {
       "pokemon": "darmanitan-galar-standard",
@@ -152,15 +152,15 @@
   "c0c0_": [
     {
       "pokemon": "eternatus",
-      "defeated": 5
+      "defeated": 6
     },
     {
       "pokemon": "mewtwo",
-      "defeated": 1
+      "defeated": 2
     },
     {
       "pokemon": "calyrex-ice",
-      "defeated": 3
+      "defeated": 5
     },
     {
       "pokemon": "ting-lu",
@@ -176,7 +176,7 @@
     },
     {
       "pokemon": "gholdengo",
-      "defeated": 1
+      "defeated": 2
     },
     {
       "pokemon": "annihilape",
@@ -194,7 +194,7 @@
     },
     {
       "pokemon": "kyurem-white",
-      "defeated": 4
+      "defeated": 5
     },
     {
       "pokemon": "zamazenta-crowned",
@@ -202,11 +202,11 @@
     },
     {
       "pokemon": "spectrier",
-      "defeated": 0
+      "defeated": 1
     },
     {
       "pokemon": "slowking",
-      "defeated": 0
+      "defeated": 1
     },
     {
       "pokemon": "snorlax",
@@ -222,7 +222,7 @@
     },
     {
       "pokemon": "sandy-shocks",
-      "defeated": 0
+      "defeated": 1
     },
     {
       "pokemon": "enamorus-incarnate",
@@ -240,7 +240,7 @@
   "resolamxxy": [
     {
       "pokemon": "kyogre",
-      "defeated": 4
+      "defeated": 5
     },
     {
       "pokemon": "basculegion-male",
@@ -256,15 +256,15 @@
     },
     {
       "pokemon": "arceus-dragon",
-      "defeated": 7
+      "defeated": 8
     },
     {
       "pokemon": "kangaskhan-mega",
-      "defeated": 2
+      "defeated": 4
     },
     {
       "pokemon": "whimsicott",
-      "defeated": -1
+      "defeated": 2
     },
     {
       "pokemon": "registeel",
@@ -302,7 +302,7 @@
     },
     {
       "pokemon": "blastoise-mega",
-      "defeated": 0
+      "defeated": 6
     },
     {
       "pokemon": "pecharunt",
@@ -352,7 +352,7 @@
     },
     {
       "pokemon": "pheromosa",
-      "defeated": 1
+      "defeated": 3
     },
     {
       "pokemon": "lopunny-mega",
@@ -360,11 +360,11 @@
     },
     {
       "pokemon": "roaring-moon",
-      "defeated": 0
+      "defeated": 3
     },
     {
       "pokemon": "tapu-lele",
-      "defeated": 5
+      "defeated": 6
     },
     {
       "pokemon": "sneasler",
@@ -390,7 +390,7 @@
   "jaegerpods": [
     {
       "pokemon": "zacian",
-      "defeated": 3
+      "defeated": 4
     },
     {
       "pokemon": "arceus-dark",
@@ -402,7 +402,7 @@
     },
     {
       "pokemon": "gouging-fire",
-      "defeated": 4
+      "defeated": 5
     },
     {
       "pokemon": "charizard-mega-y",
@@ -410,7 +410,7 @@
     },
     {
       "pokemon": "archaludon",
-      "defeated": 0
+      "defeated": 3
     },
     {
       "pokemon": "ribombee",
@@ -440,11 +440,11 @@
   "ifurgat": [
     {
       "pokemon": "magearna",
-      "defeated": 1
+      "defeated": 3
     },
     {
       "pokemon": "giratina-origin",
-      "defeated": 4
+      "defeated": 7
     },
     {
       "pokemon": "terapagos",
@@ -482,7 +482,7 @@
   "beachwatch": [
     {
       "pokemon": "arceus-water",
-      "defeated": 12
+      "defeated": 14
     },
     {
       "pokemon": "genesect",
@@ -490,7 +490,7 @@
     },
     {
       "pokemon": "landorus-incarnate",
-      "defeated": 1
+      "defeated": 4
     },
     {
       "pokemon": "flutter-mane",
@@ -498,7 +498,7 @@
     },
     {
       "pokemon": "diancie-mega",
-      "defeated": 1
+      "defeated": 2
     },
     {
       "pokemon": "kyurem-black",
