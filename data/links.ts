@@ -1,21 +1,28 @@
 import { teamArrayMappable } from '@/data/offseason-2/teams';
 
-const navLinks = {
-  'offseason-2': [
+const teamArrays = {
+  'offseason-2': teamArrayMappable,
+  'season-3': teamArrayMappable,
+};
+
+const navLinksSeasons = (season: string) => {
+  // @ts-expect-error
+  const teams = teamArrays[season];
+  const Array = [
     {
       title: 'Home',
       path: '/',
     },
     {
       title: 'Scores',
-      path: '/offseason-2/scores',
+      path: `/${season}/scores`,
     },
     {
       title: 'Teams',
-      path: '/offseason-2/teams',
-      subpaths: teamArrayMappable.map((team) => ({
+      path: `/${season}/teams`,
+      subpaths: teams.map((team: any) => ({
         title: team.name,
-        path: `/offseason-2/teams/${team.discord}`,
+        path: `/${season}/teams/${team.discord}`,
         discord: team.discord,
         showdown: team.showdown,
         avatar: team.picture,
@@ -24,32 +31,30 @@ const navLinks = {
     },
     {
       title: 'Standings',
-      path: '/offseason-2/standings',
+      path: `/${season}/standings`,
     },
     {
       title: 'Pokémon',
-      path: '/offseason-2/pokemon',
+      path: `/${season}/pokemon`,
     },
     {
       title: 'Stats',
-      path: '/offseason-2/stats',
+      path: `/${season}/stats`,
     },
     {
       title: 'Trades',
-      path: '/offseason-2/trades',
+      path: `/${season}/trades`,
     },
-    { title: 'Compare Pokémon', path: '/offseason-2/compare' },
-  ],
+    { title: 'Compare Pokémon', path: `/${season}/compare` },
+  ];
+  return Array;
 };
 
 export const seasonLinks = [
   { value: 'offseason-2', title: 'Offseason 2', disabled: false },
-
-  // { value: 'season-1', title: 'Season 1', disabled: true },
-  // { value: 'offseason-1', title: 'Offseason 1', disabled: true },
-  // { value: 'season-2', title: 'Season 2', disabled: true },
-  // { value: 'season-3', title: 'Season 3', disabled: true },
+  // { value: 'season-3', title: 'Season 3', disabled: false },
 ];
+
 export const currentSeason = seasonLinks[0].title;
 
-export default navLinks;
+export default navLinksSeasons;

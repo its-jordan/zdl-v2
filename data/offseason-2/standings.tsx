@@ -105,6 +105,15 @@ export default function Standings() {
     return gamesbehind == 0 ? '-' : gamesbehind;
   }
 
+  function calculateGamesBehindNumber(record: TeamRecord) {
+    const wins = record.wins;
+    const maxWins = calcMaxWins();
+    const gamesbehind = maxWins - wins;
+    return gamesbehind;
+  }
+
+  const maximumWins = calcMaxWins();
+
   const sortedTeams = [...teamArrayMappable].sort((a, b) => {
     const aRecord = records[a.discord];
     const bRecord = records[b.discord];
@@ -186,7 +195,16 @@ export default function Standings() {
                       className='standings-team-avatar'
                     />
                   </TableCell>
-                  <TableCell>{team.team}</TableCell>
+                  <TableCell>
+                    {calculateGamesBehindNumber(record) > 8 - maximumWins ? (
+                      <div className='eliminated'>
+                        <div>{team.team}</div>
+                        <div className='eliminated-text'> E</div>
+                      </div>
+                    ) : (
+                      <>{team.team}</>
+                    )}
+                  </TableCell>
                   <TableCell>{team.discord}</TableCell>
                   <TableCell>{record.wins}</TableCell>
                   <TableCell>{record.losses}</TableCell>
@@ -209,6 +227,10 @@ export default function Standings() {
             })}
           </TableBody>
         </Table>
+        <div className='eliminated'>
+          <div className='eliminated-text'>E</div>
+          <div className='eliminated-explanation'>{'-'} Eliminated</div>
+        </div>
       </div>
     </>
   );

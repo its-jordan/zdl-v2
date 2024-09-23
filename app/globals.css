@@ -1387,3 +1387,21 @@ main {
   background-color: var(--_type-color);
   border-radius: 100vw;
 }
+
+.eliminated {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.5rem;
+  justify-content: start;
+  align-items: center;
+}
+
+.eliminated-text {
+  font-size: 0.675rem;
+  font-weight: 900;
+  color: color-mix(in srgb, hsl(var(--foreground)) 50%, hsl(var(--background)));
+}
+
+.eliminated-explanation {
+  font-size: 0.875rem;
+}

@@ -29,7 +29,7 @@ interface menuLink {
   children?: React.ReactNode;
 }
 
-type NavigationCategory = keyof typeof navLinks;
+type NavigationCategory = 'offseason-2' | 'season-3';
 
 function MenuLink({ trigger, children, path }: menuLink) {
   return (
@@ -67,13 +67,13 @@ const Navbar = () => {
         </div>
         <NavigationMenu className='navigation-list-container'>
           <NavigationMenuList>
-            {navLinks[selectedCategory].map((link, index) => {
+            {navLinks(selectedCategory).map((link, index) => {
               if (link.subpaths !== undefined) {
                 return (
                   <MenuLink key={index} trigger={link.title} path={link.path}>
                     <NavigationMenuContent className='navigation-links-container'>
                       <div className='navbar_sublink_container'>
-                        {link.subpaths.map((team, index) => {
+                        {link.subpaths.map((team: any, index: number) => {
                           return (
                             <Link
                               className='navbar_sublink_item'
