@@ -13,10 +13,10 @@ function calcMaxSpeed(e: number, item: string) {
   const formula = (e * 2 + 99) * nature;
   const speed =
     item == 'choicescarf'
-      ? Math.floor(formula * 1.5 - 1)
+      ? Math.floor(formula * 1.5)
       : item == 'tailwind'
-      ? Math.floor(formula * 2 - 1)
-      : Math.floor(formula - 1);
+      ? Math.floor(formula * 2)
+      : Math.floor(formula);
   return speed;
 }
 
