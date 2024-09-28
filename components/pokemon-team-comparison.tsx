@@ -31,10 +31,10 @@ function calcMaxSpeed(e: number, item: string) {
   const formula = (e * 2 + 99) * nature;
   const speed =
     item == 'choicescarf'
-      ? Math.floor(formula * 1.5 - 1)
+      ? Math.floor(formula * 1.5)
       : item == 'tailwind'
-      ? Math.floor(formula * 2 - 1)
-      : Math.floor(formula - 1);
+      ? Math.floor(formula * 2)
+      : Math.floor(formula);
   return speed;
 }
 
@@ -339,18 +339,6 @@ function PokemonDisplay({
     type,
     effectiveness: getTypeEffectiveness(type),
   }));
-
-  function calcMaxSpeed(e: number, item: string) {
-    const nature = 1.1;
-    const formula = (e * 2 + 99) * nature;
-    const speed =
-      item == 'choicescarf'
-        ? Math.floor(formula * 1.5 - 1)
-        : item == 'tailwind'
-        ? Math.floor(formula * 2 - 1)
-        : Math.floor(formula - 1);
-    return speed;
-  }
 
   const maxspeed = calcMaxSpeed(pokemon.stats[5].stat, '');
   const choicescarf = calcMaxSpeed(pokemon.stats[5].stat, 'choicescarf');
