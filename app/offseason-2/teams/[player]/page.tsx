@@ -161,42 +161,45 @@ export default function TeamsView() {
       )}
 
       {view === 'stats' && (
-        <div className='player-stats-container'>
-          {sortedStats.map((pokemon: any, index: number) => {
-            return (
-              <div className='pokemon-stats-container' key={index}>
-                <div className='pokemon-stats-position'>{index + 1}</div>
-                <img
-                  className='card-picture'
-                  src={returnMons(pokemon.pokemon).sprite}
-                  alt=''
-                  width={50}
-                  height={50}
-                />
-                <div className='pokemon-stats-name-container'>
-                  <div className='pokemon-stats-name'>
-                    {nameSplit(pokemon.pokemon)}
+        <>
+          <div className='italic text-xs'>Stats not updated as of Week 6</div>
+          <div className='player-stats-container'>
+            {sortedStats.map((pokemon: any, index: number) => {
+              return (
+                <div className='pokemon-stats-container' key={index}>
+                  <div className='pokemon-stats-position'>{index + 1}</div>
+                  <img
+                    className='card-picture'
+                    src={returnMons(pokemon.pokemon).sprite}
+                    alt=''
+                    width={50}
+                    height={50}
+                  />
+                  <div className='pokemon-stats-name-container'>
+                    <div className='pokemon-stats-name'>
+                      {nameSplit(pokemon.pokemon)}
+                    </div>
+                    {index > 3 ? (
+                      <div className='pokemon-stats-defeated'>
+                        Kills: {pokemon.defeated}
+                      </div>
+                    ) : (
+                      <></>
+                    )}
                   </div>
-                  {index > 3 ? (
+                  {index <= 3 ? (
                     <div className='pokemon-stats-defeated'>
-                      Kills: {pokemon.defeated}
+                      {pokemon.defeated}
                     </div>
                   ) : (
                     <></>
                   )}
                 </div>
-                {index <= 3 ? (
-                  <div className='pokemon-stats-defeated'>
-                    {pokemon.defeated}
-                  </div>
-                ) : (
-                  <></>
-                )}
-              </div>
-            );
-          })}
-          <div className='divider'></div>
-        </div>
+              );
+            })}
+            <div className='divider'></div>
+          </div>
+        </>
       )}
     </main>
   );
