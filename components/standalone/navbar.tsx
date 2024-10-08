@@ -148,4 +148,16 @@ const Navbar = () => {
   );
 };
 
+export const HomePage = () => {
+  const [selectedCategory] = useState<NavigationCategory>('offseason-2');
+  return (
+    <img
+      src={`/images/${selectedCategory}.png`}
+      alt='homepage background'
+      width={900}
+      height={900}
+    />
+  );
+};
+
 export default Navbar;
