@@ -73,7 +73,7 @@ export default function PokemonStats() {
           </Select>
         </div>
       </div>
-      <div className='italic text-xs'>Stats not updated as of Week 6</div>
+      <div className='italic text-xs'>Stats updated as of Week 7</div>
       <div className='all-stats-container'>
         <Table>
           <TableHeader>
