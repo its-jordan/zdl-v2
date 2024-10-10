@@ -1,5 +1,8 @@
 'use client';
 
+import Link from 'next/link';
+import { BsDiscord, BsPersonFill } from 'react-icons/bs';
+import { MdOutlineCatchingPokemon } from 'react-icons/md';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,7 +12,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import { useState } from 'react';
 import {
   Select,
   SelectContent,
@@ -18,20 +20,15 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import navLinks, { seasonLinks, currentSeason } from '@/data/links';
-import Link from 'next/link';
-import Image from 'next/image';
-import { BsDiscord, BsPersonFill } from 'react-icons/bs';
-import { MdOutlineCatchingPokemon } from 'react-icons/md';
+import { useCategory } from '@/components/standalone/CategoryContext';
 
-interface menuLink {
+interface MenuLinkProps {
   trigger: string;
   path: string;
   children?: React.ReactNode;
 }
 
-type NavigationCategory = 'offseason-2' | 'season-3';
-
-function MenuLink({ trigger, children, path }: menuLink) {
+function MenuLink({ trigger, children, path }: MenuLinkProps) {
   return (
     <>
       {children ? (
@@ -51,8 +48,8 @@ function MenuLink({ trigger, children, path }: menuLink) {
 }
 
 const Navbar = () => {
-  const [selectedCategory, setSelectedCategory] =
-    useState<NavigationCategory>('offseason-2');
+  const { selectedCategory, setSelectedCategory } = useCategory();
+
   return (
     <div className='navbar'>
       <div className='internal-nav-container'>
@@ -73,90 +70,67 @@ const Navbar = () => {
                   <MenuLink key={index} trigger={link.title} path={link.path}>
                     <NavigationMenuContent className='navigation-links-container'>
                       <div className='navbar_sublink_container'>
-                        {link.subpaths.map((team: any, index: number) => {
-                          return (
-                            <Link
-                              className='navbar_sublink_item'
-                              key={index}
-                              href={team.path}>
-                              <img
-                                className='navbar_sublink_avatar'
-                                src={team.avatar}
-                                width={50}
-                                height={50}
-                                alt={team.title}
-                              />
-                              <div>
-                                <div className='navbar_sublink_teamname'>
-                                  {team.name}
-                                </div>
-                                <div className='navbar_sublink_info navbar_sublink_team'>
-                                  <BsPersonFill />
-                                  <div>{team.title}</div>
-                                </div>
-                                <div className='navbar_sublink_info navbar_sublink_showdown'>
-                                  <MdOutlineCatchingPokemon />
-                                  <div>{team.showdown}</div>
-                                </div>
-                                <div className='navbar_sublink_info navbar_sublink_discord'>
-                                  <BsDiscord />
-                                  <div>{team.discord}</div>
-                                </div>
+                        {link.subpaths.map((team: any, index: number) => (
+                          <Link
+                            className='navbar_sublink_item'
+                            key={index}
+                            href={team.path}>
+                            <img
+                              className='navbar_sublink_avatar'
+                              src={team.avatar}
+                              width={50}
+                              height={50}
+                              alt={team.title}
+                            />
+                            <div>
+                              <div className='navbar_sublink_teamname'>
+                                {team.name}
                               </div>
-                            </Link>
-                          );
-                        })}
+                              <div className='navbar_sublink_info navbar_sublink_team'>
+                                <BsPersonFill />
+                                <div>{team.title}</div>
+                              </div>
+                              <div className='navbar_sublink_info navbar_sublink_showdown'>
+                                <MdOutlineCatchingPokemon />
+                                <div>{team.showdown}</div>
+                              </div>
+                              <div className='navbar_sublink_info navbar_sublink_discord'>
+                                <BsDiscord />
+                                <div>{team.discord}</div>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
                       </div>
                     </NavigationMenuContent>
                   </MenuLink>
                 );
               }
               return (
-                <MenuLink
-                  key={index}
-                  trigger={link.title}
-                  path={link.path}></MenuLink>
+                <MenuLink key={index} trigger={link.title} path={link.path} />
               );
             })}
           </NavigationMenuList>
         </NavigationMenu>
         <div className='navigation-season-container'>
-          <Select
-            value={selectedCategory}
-            onValueChange={(value: NavigationCategory) =>
-              setSelectedCategory(value)
-            }>
+          <Select value={selectedCategory} onValueChange={setSelectedCategory}>
             <SelectTrigger className='w-[200px]'>
               <SelectValue placeholder={currentSeason} />
             </SelectTrigger>
             <SelectContent>
-              {seasonLinks.map((season, index) => {
-                return (
-                  <SelectItem
-                    key={index}
-                    value={season.value}
-                    disabled={season.disabled}>
-                    {season.title}
-                  </SelectItem>
-                );
-              })}
+              {seasonLinks.map((season, index) => (
+                <SelectItem
+                  key={index}
+                  value={season.value}
+                  disabled={season.disabled}>
+                  {season.title}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>
       </div>
     </div>
-  );
-};
-
-export const HomePage = () => {
-  const [selectedCategory] = useState<NavigationCategory>('offseason-2');
-  return (
-    <img
-      src={`/images/${selectedCategory}.png`}
-      alt='homepage background'
-      width={900}
-      height={900}
-    />
   );
 };
 

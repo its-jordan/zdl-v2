@@ -1,10 +1,20 @@
-import { HomePage } from '@/components/standalone/navbar';
-import Image from 'next/image';
+'use client';
 
-export default function Home() {
+import { useCategory } from '@/components/standalone/CategoryContext';
+
+const HomePage = () => {
+  const { selectedCategory } = useCategory();
+
   return (
-    <main className='home-container'>
-      <HomePage />
-    </main>
+    <div className='justify-center h-[100vh] w-[100vw] items-center flex'>
+      <img
+        src={`/images/${selectedCategory}.png`}
+        alt='homepage background'
+        width={900}
+        height={900}
+      />
+    </div>
   );
-}
+};
+
+export default HomePage;

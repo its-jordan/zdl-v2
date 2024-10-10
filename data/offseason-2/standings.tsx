@@ -20,6 +20,7 @@ import {
 import schedule from './schedule.json';
 import topguns from './topguns.json';
 import calcMaxWins from './calcMaxWins';
+import Link from 'next/link';
 
 type TeamRecord = {
   wins: number;
@@ -87,6 +88,13 @@ function calculateRecords(): Record<string, TeamRecord> {
   });
 
   return records;
+}
+
+export function getSelectedCategoryFromLocalStorage(): string {
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem('selectedCategory') || 'offseason-2';
+  }
+  return 'offseason-2'; // Default value for server-side rendering
 }
 
 function calculateWinPercentage(record: TeamRecord): number {
@@ -198,14 +206,26 @@ export default function Standings() {
                   <TableCell>
                     {calculateGamesBehindNumber(record) > 8 - maximumWins ? (
                       <div className='eliminated'>
-                        <div>{team.team}</div>
+                        <Link
+                          href={`/${getSelectedCategoryFromLocalStorage()}/teams/${
+                            team.discord
+                          }`}>
+                          {team.team}
+                        </Link>
                         <div className='eliminated-text'> E</div>
                       </div>
                     ) : (
                       <>{team.team}</>
                     )}
                   </TableCell>
-                  <TableCell>{team.discord}</TableCell>
+                  <TableCell>
+                    <Link
+                      href={`/${getSelectedCategoryFromLocalStorage()}/teams/${
+                        team.discord
+                      }`}>
+                      {team.discord}
+                    </Link>
+                  </TableCell>
                   <TableCell>{record.wins}</TableCell>
                   <TableCell>{record.losses}</TableCell>
                   <TableCell>

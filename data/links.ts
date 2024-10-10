@@ -52,7 +52,7 @@ const navLinksSeasons = (season: string) => {
 
 export const seasonLinks = [
   { value: 'offseason-2', title: 'Offseason 2', disabled: false },
-  // { value: 'season-3', title: 'Season 3', disabled: false },
+  { value: 'season-3', title: 'Season 3', disabled: true },
 ];
 
 export const currentSeason = seasonLinks[0].title;
