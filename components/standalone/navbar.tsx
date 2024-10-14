@@ -19,7 +19,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import navLinks, { seasonLinks, currentSeason } from '@/data/links';
+import navLinks, {
+  seasonLinks,
+  currentSeason,
+  tradesActive,
+} from '@/data/links';
 import { useCategory } from '@/components/standalone/CategoryContext';
 
 interface MenuLinkProps {
@@ -108,7 +112,7 @@ const Navbar = () => {
               }
               return (
                 <>
-                  {link.title == 'Trades' && selectedCategory == 'season-3' ? (
+                  {!tradesActive() && link.title == 'Trades' ? (
                     <></>
                   ) : (
                     <MenuLink
