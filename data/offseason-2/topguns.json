@@ -118,7 +118,7 @@
     },
     {
       "pokemon": "torkoal",
-      "defeated": 0
+      "defeated": 2
     },
     {
       "pokemon": "clodsire",
@@ -138,7 +138,7 @@
     },
     {
       "pokemon": "stakataka",
-      "defeated": 3
+      "defeated": 4
     },
     {
       "pokemon": "heliolisk",
@@ -198,7 +198,7 @@
     },
     {
       "pokemon": "zamazenta-crowned",
-      "defeated": 2
+      "defeated": 3
     },
     {
       "pokemon": "spectrier",
@@ -214,11 +214,11 @@
     },
     {
       "pokemon": "heatran",
-      "defeated": 4
+      "defeated": 6
     },
     {
       "pokemon": "enamorus-therian",
-      "defeated": 0
+      "defeated": 1
     },
     {
       "pokemon": "sandy-shocks",
@@ -290,11 +290,11 @@
   "seanboyq": [
     {
       "pokemon": "rayquaza",
-      "defeated": 1
+      "defeated": 2
     },
     {
       "pokemon": "arceus-fairy",
-      "defeated": 8
+      "defeated": 12
     },
     {
       "pokemon": "cyclizar",
@@ -310,7 +310,7 @@
     },
     {
       "pokemon": "hippowdon",
-      "defeated": 2
+      "defeated": 3
     },
     {
       "pokemon": "magnezone",
@@ -348,7 +348,7 @@
     },
     {
       "pokemon": "groudon",
-      "defeated": 0
+      "defeated": 2
     },
     {
       "pokemon": "pheromosa",
@@ -356,7 +356,7 @@
     },
     {
       "pokemon": "lopunny-mega",
-      "defeated": 0
+      "defeated": 3
     },
     {
       "pokemon": "roaring-moon",
@@ -364,7 +364,7 @@
     },
     {
       "pokemon": "tapu-lele",
-      "defeated": 6
+      "defeated": 7
     },
     {
       "pokemon": "sneasler",
