@@ -3,6 +3,8 @@ import { nameSplit } from '@/util/nameSplit';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { returnPoints } from '@/data/season-3/returnPoints';
+import { returnTera } from '@/data/season-3/checkTera';
 
 interface CardData {
   pokemon: string;
@@ -41,6 +43,7 @@ export default function PokemonCard({ pokemon }: CardData) {
           href={`https://www.smogon.com/dex/sv/pokemon/${data.name}`}
           target='_blank'>
           {nameSplit(data.name)}
+          <div className='card-points'>{`(${returnPoints(data.name)})`}</div>
         </Link>
         <div className='card-type'>
           {data.types.map((type, index) => {
@@ -60,6 +63,13 @@ export default function PokemonCard({ pokemon }: CardData) {
             );
           })}
         </div>
+        {returnTera(data.name) ? (
+          <div className='tera-type-icon'>
+            <img src='/images/tera.png' alt='Tera Type Icon'></img>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
       <div className='card-stats'>
         {data.stats.map((stat, index) => {

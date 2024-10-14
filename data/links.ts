@@ -1,8 +1,9 @@
 import { teamArrayMappable } from '@/data/offseason-2/teams';
+import { teamArrayMappable as teamArrayS3 } from '@/data/season-3/teams';
 
 const teamArrays = {
   'offseason-2': teamArrayMappable,
-  'season-3': teamArrayMappable,
+  'season-3': teamArrayS3,
 };
 
 const navLinksSeasons = (season: string) => {
@@ -35,7 +36,7 @@ const navLinksSeasons = (season: string) => {
     },
     {
       title: 'Pokémon',
-      path: `/${season}/pokemon`,
+      path: `/pokemon`,
     },
     {
       title: 'Stats',

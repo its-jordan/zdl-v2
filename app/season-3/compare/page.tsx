@@ -1,4 +1,4 @@
-import PokemonTeamComparison from '@/data/offseason-2/pokemon-team-comparison';
+import PokemonTeamComparison from '@/data/season-3/pokemon-team-comparison';
 
 export default function Compare() {
   return (

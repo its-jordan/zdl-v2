@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
-import { teamArray } from '@/data/offseason-2/teams';
+import { teamArray } from './teams';
 import returnMons from '@/data/pokemonData';
 import { Card, CardContent } from '@/components/ui/card';
 import {

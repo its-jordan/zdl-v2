@@ -107,7 +107,17 @@ const Navbar = () => {
                 );
               }
               return (
-                <MenuLink key={index} trigger={link.title} path={link.path} />
+                <>
+                  {link.title == 'Trades' && selectedCategory == 'season-3' ? (
+                    <></>
+                  ) : (
+                    <MenuLink
+                      key={index}
+                      trigger={link.title}
+                      path={link.path}
+                    />
+                  )}
+                </>
               );
             })}
           </NavigationMenuList>
