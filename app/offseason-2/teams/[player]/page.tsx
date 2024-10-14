@@ -162,7 +162,7 @@ export default function TeamsView() {
 
       {view === 'stats' && (
         <>
-          <div className='italic text-xs'>Stats updated as of Week 7</div>
+          {/* <div className='italic text-xs'>Stats updated as of Week 7</div> */}
           <div className='player-stats-container'>
             {sortedStats.map((pokemon: any, index: number) => {
               return (

@@ -22,7 +22,7 @@ import {
 import navLinks, {
   seasonLinks,
   currentSeason,
-  tradesActive,
+  // tradesActive,
 } from '@/data/links';
 import { useCategory } from '@/components/standalone/CategoryContext';
 
@@ -112,7 +112,7 @@ const Navbar = () => {
               }
               return (
                 <>
-                  {!tradesActive() && link.title == 'Trades' ? (
+                  {selectedCategory == 'season-3' && link.title == 'Trades' ? (
                     <></>
                   ) : (
                     <MenuLink
