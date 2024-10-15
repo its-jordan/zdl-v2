@@ -25,6 +25,7 @@ import navLinks, {
   // tradesActive,
 } from '@/data/links';
 import { useCategory } from '@/components/standalone/CategoryContext';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface MenuLinkProps {
   trigger: string;
@@ -53,6 +54,15 @@ function MenuLink({ trigger, children, path }: MenuLinkProps) {
 
 const Navbar = () => {
   const { selectedCategory, setSelectedCategory } = useCategory();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleCategoryChange = (newCategory: string) => {
+    setSelectedCategory(newCategory);
+    const currentPath = pathname.split('/').slice(2).join('/');
+    const newPath = `/${newCategory}/${currentPath}`;
+    router.push(newPath);
+  };
 
   return (
     <div className='navbar'>
@@ -127,7 +137,7 @@ const Navbar = () => {
           </NavigationMenuList>
         </NavigationMenu>
         <div className='navigation-season-container'>
-          <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+          <Select value={selectedCategory} onValueChange={handleCategoryChange}>
             <SelectTrigger className='w-[200px]'>
               <SelectValue placeholder={currentSeason} />
             </SelectTrigger>

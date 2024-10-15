@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { teamArrayMappable } from '@/data/offseason-2/teams';
 import {
   Select,
@@ -21,6 +21,7 @@ import schedule from './schedule.json';
 import topguns from './topguns.json';
 import calcMaxWins from './calcMaxWins';
 import Link from 'next/link';
+import createBeatenOpponentsArray from '@/util/getHead2Head';
 
 type TeamRecord = {
   wins: number;
@@ -104,7 +105,7 @@ function calculateWinPercentage(record: TeamRecord): number {
 
 export default function Standings() {
   const [sortOption, setSortOption] = useState<SortOption>('winPercentage');
-  const records = calculateRecords();
+  const records = useMemo(() => calculateRecords(), []);
 
   function calculateGamesBehind(record: TeamRecord) {
     const wins = record.wins;
@@ -122,33 +123,58 @@ export default function Standings() {
 
   const maximumWins = calcMaxWins();
 
-  const sortedTeams = [...teamArrayMappable].sort((a, b) => {
-    const aRecord = records[a.discord];
-    const bRecord = records[b.discord];
-    const aWinPercentage = calculateWinPercentage(aRecord);
-    const bWinPercentage = calculateWinPercentage(bRecord);
+  const result = createBeatenOpponentsArray(schedule);
 
-    switch (sortOption) {
-      case 'wins':
-        return bRecord.wins - aRecord.wins || bWinPercentage - aWinPercentage;
-      case 'losses':
-        return (
-          bRecord.losses - aRecord.losses || aWinPercentage - bWinPercentage
-        );
-      case 'streak':
-        return (
-          bRecord.streak - aRecord.streak || bWinPercentage - aWinPercentage
-        );
-      case 'pokemonDefeated':
-        return (
-          bRecord.pokemonDefeated - aRecord.pokemonDefeated ||
-          bWinPercentage - aWinPercentage
-        );
-      case 'winPercentage':
-      default:
-        return bWinPercentage - aWinPercentage || bRecord.wins - aRecord.wins;
-    }
-  });
+  const sortedTeams = useMemo(() => {
+    return [...teamArrayMappable].sort((a, b) => {
+      const aRecord = records[a.discord];
+      const bRecord = records[b.discord];
+      const aWinPercentage = calculateWinPercentage(aRecord);
+      const bWinPercentage = calculateWinPercentage(bRecord);
+
+      let comparison = 0;
+
+      switch (sortOption) {
+        case 'wins':
+          // @ts-expect-error
+          if (result[a.discord].includes(b.discord)) {
+            comparison = bRecord.wins - aRecord.wins || 0 - 1;
+          }
+          // @ts-expect-error
+          else if (result[b.discord].includes(a.discord)) {
+            comparison = bRecord.wins - aRecord.wins || 1 - 0;
+          } else {
+            comparison = bRecord.wins - aRecord.wins;
+          }
+          break;
+        case 'losses':
+          comparison = bRecord.losses - aRecord.losses;
+          break;
+        case 'streak':
+          comparison = bRecord.streak - aRecord.streak;
+          break;
+        case 'pokemonDefeated':
+          comparison = bRecord.pokemonDefeated - aRecord.pokemonDefeated;
+          break;
+        case 'winPercentage':
+          comparison = bWinPercentage - aWinPercentage;
+        default:
+          // @ts-expect-error
+          if (result[a.discord].includes(b.discord)) {
+            comparison = bRecord.wins - aRecord.wins || 0 - 1;
+          }
+          // @ts-expect-error
+          else if (result[b.discord].includes(a.discord)) {
+            comparison = bRecord.wins - aRecord.wins || 1 - 0;
+          } else {
+            comparison = bRecord.wins - aRecord.wins;
+          }
+          break;
+      }
+
+      return comparison;
+    });
+  }, [records, sortOption]);
 
   return (
     <>
