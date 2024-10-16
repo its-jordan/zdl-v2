@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
 import Teams, { teamArray } from '@/data/offseason-2/teams';
 import PokemonCard from '@/components/standalone/pokemoncard';
 import { BsDiscord, BsPersonFill } from 'react-icons/bs';
-import { MdOutlineCatchingPokemon } from 'react-icons/md';
+import { MdCalendarToday, MdOutlineCatchingPokemon } from 'react-icons/md';
 import { ReturnTypeMatchup, types } from '@/util/getTypeData';
 import {
   Select,
@@ -35,6 +34,11 @@ export default function TeamsView() {
   const [sortBy, setSortBy] = useState(0);
   const returnPathTextArray = Teams();
   const pathname = usePathname().replace('/offseason-2/teams/', '');
+
+  const season =
+    usePathname().split('/')[1].charAt(0).toUpperCase() +
+    usePathname().split('/')[1].split('-').join(' ').slice(1);
+
   // @ts-expect-error
   const team = teamArray[pathname];
 
@@ -84,6 +88,10 @@ export default function TeamsView() {
             <div className='team-info team-discord'>
               <BsDiscord />
               <div>{team.discord}</div>
+            </div>
+            <div className='team-info team-player'>
+              <MdCalendarToday />
+              <div>{season}</div>
             </div>
           </div>
         </div>

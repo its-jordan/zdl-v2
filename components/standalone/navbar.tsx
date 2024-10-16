@@ -60,8 +60,13 @@ const Navbar = () => {
   const handleCategoryChange = (newCategory: string) => {
     setSelectedCategory(newCategory);
     const currentPath = pathname.split('/').slice(2).join('/');
-    const newPath = `/${newCategory}/${currentPath}`;
-    router.push(newPath);
+    const currentTeam = pathname.split('/').slice(3).join('/');
+    console.log(currentTeam);
+    if (pathname !== '/' && !pathname.includes('/teams/')) {
+      const newPath = `/${newCategory}/${currentPath}`;
+      router.push(newPath);
+    }
+    // console.log(navLinks(newCategory)[2].subpaths[0].title);
   };
 
   return (
