@@ -7511,6 +7511,36 @@ export default function returnMons(e: string) {
       ],
     };
     return data;
+  } else if (e == 'hydrapple') {
+    const data = {
+      name: 'Hydrapple',
+      abilities: ['supersweet-syrup', 'regenerator', 'sticky-hold'],
+      id: 1019,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1019.png',
+      types: ['grass', 'dragon'],
+      weaknesses: [
+        'bug: 2x',
+        'dragon: 2x',
+        'electric: 0.25x',
+        'fairy: 2x',
+        'flying: 2x',
+        'grass: 0.25x',
+        'ground: 0.5x',
+        'ice: 4x',
+        'poison: 2x',
+        'water: 0.25x',
+      ],
+      stats: [
+        { stat: 106, name: 'HP' },
+        { stat: 80, name: 'ATT' },
+        { stat: 110, name: 'DEF' },
+        { stat: 120, name: 'SPA' },
+        { stat: 80, name: 'SPD' },
+        { stat: 44, name: 'SPE' },
+      ],
+    };
+    return data;
   } else if (e == 'torchic') {
     const data = {
       name: 'torchic',
@@ -30436,6 +30466,61 @@ export default function returnMons(e: string) {
       ],
     };
     return data;
+  } else if (e == 'rotom-mow') {
+    const data = {
+      name: 'rotom-mow',
+      abilities: ['levitate'],
+      id: 10012,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10012.png',
+      types: ['electric', 'grass'],
+      weaknesses: [
+        'grass: 0.5x',
+        'electric: 0.25x',
+        'steel: 0.5x',
+        'water: 0.5x',
+        'bug: 2x',
+        'poison: 2x',
+        'fire: 2x',
+        'ice: 2x',
+      ],
+      stats: [
+        { stat: 50, name: 'HP' },
+        { stat: 65, name: 'ATT' },
+        { stat: 107, name: 'DEF' },
+        { stat: 105, name: 'SPA' },
+        { stat: 107, name: 'SPD' },
+        { stat: 86, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'rotom-wash') {
+    const data = {
+      name: 'rotom-wash',
+      abilities: ['levitate'],
+      id: 10009,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10009.png',
+      types: ['electric', 'water'],
+      weaknesses: [
+        'fire: 0.5x',
+        'flying: 0.5x',
+        'grass: 2x',
+        'ground: 2x',
+        'ice: 0.5x',
+        'steel: 0.25x',
+        'water: 0.5x',
+      ],
+      stats: [
+        { stat: 50, name: 'HP' },
+        { stat: 65, name: 'ATT' },
+        { stat: 107, name: 'DEF' },
+        { stat: 105, name: 'SPA' },
+        { stat: 107, name: 'SPD' },
+        { stat: 86, name: 'SPE' },
+      ],
+    };
+    return data;
   } else if (e == 'gouging-fire') {
     const data = {
       name: 'gouging-fire',
@@ -30966,6 +31051,199 @@ export default function returnMons(e: string) {
         { stat: 84, name: 'DEF' },
         { stat: 60, name: 'SPA' },
         { stat: 96, name: 'SPD' },
+        { stat: 110, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'ogerpon-wellspring-mask') {
+    const data = {
+      name: 'ogerpon-wellspring-mask',
+      abilities: ['water-absorb'],
+      id: 10273,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10273.png',
+      types: ['water', 'grass'],
+      weaknesses: [
+        'bug: 2x',
+        'flying: 2x',
+        'ground: 0.5x',
+        'poison: 2x',
+        'steel: 0.5x',
+        'water: 0.25x',
+      ],
+      stats: [
+        { stat: 80, name: 'HP' },
+        { stat: 120, name: 'ATT' },
+        { stat: 84, name: 'DEF' },
+        { stat: 60, name: 'SPA' },
+        { stat: 96, name: 'SPD' },
+        { stat: 110, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'ogerpon-hearthflame-mask') {
+    const data = {
+      name: 'ogerpon-hearthflame-mask',
+      abilities: ['mold-breaker'],
+      id: 10274,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10274.png',
+      types: ['grass', 'fire'],
+      weaknesses: [
+        'electric: 0.5x',
+        'fairy: 0.5x',
+        'flying: 2x',
+        'grass: 0.25x',
+        'poison: 2x',
+        'rock: 2x',
+        'steel: 0.5x',
+      ],
+      stats: [
+        { stat: 80, name: 'HP' },
+        { stat: 120, name: 'ATT' },
+        { stat: 84, name: 'DEF' },
+        { stat: 60, name: 'SPA' },
+        { stat: 96, name: 'SPD' },
+        { stat: 110, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'fezandipiti') {
+    const data = {
+      name: 'fezandipiti',
+      abilities: ['toxic-chain', 'technician'],
+      id: 1016,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1016.png',
+      types: ['poison', 'fairy'],
+      weaknesses: [
+        'bug: 0.25x',
+        'dark: 0.5x',
+        'dragon: 0x',
+        'fairy: 0.5x',
+        'fighting: 0.25x',
+        'grass: 0.5x',
+        'ground: 2x',
+        'psychic: 2x',
+        'steel: 2x',
+      ],
+      stats: [
+        { stat: 88, name: 'HP' },
+        { stat: 91, name: 'ATT' },
+        { stat: 82, name: 'DEF' },
+        { stat: 70, name: 'SPA' },
+        { stat: 125, name: 'SPD' },
+        { stat: 99, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'munkidori') {
+    const data = {
+      name: 'munkidori',
+      abilities: ['toxic-chain', 'frisk'],
+      id: 1015,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1015.png',
+      types: ['poison', 'psychic'],
+      weaknesses: [
+        'dark: 2x',
+        'fairy: 0.5x',
+        'fighting: 0.25x',
+        'ghost: 2x',
+        'grass: 0.5x',
+        'ground: 2x',
+        'poison: 0.5x',
+      ],
+      stats: [
+        { stat: 88, name: 'HP' },
+        { stat: 75, name: 'ATT' },
+        { stat: 66, name: 'DEF' },
+        { stat: 130, name: 'SPA' },
+        { stat: 90, name: 'SPD' },
+        { stat: 106, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'toedscruel') {
+    const data = {
+      name: 'toedscruel',
+      abilities: ['mycelium-might'],
+      id: 949,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/949.png',
+      types: ['grass', 'ground'],
+      weaknesses: [
+        'bug: 2x',
+        'electric: 0x',
+        'fire: 2x',
+        'flying: 2x',
+        'ground: 0.5x',
+        'ice: 4x',
+        'rock: 0.5x',
+      ],
+      stats: [
+        { stat: 80, name: 'HP' },
+        { stat: 70, name: 'ATT' },
+        { stat: 65, name: 'DEF' },
+        { stat: 80, name: 'SPA' },
+        { stat: 120, name: 'SPD' },
+        { stat: 100, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'sinistcha') {
+    const data = {
+      name: 'sinistcha',
+      abilities: ['hospitality', 'heatproof'],
+      id: 1013,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1013.png',
+      types: ['ghost', 'grass'],
+      weaknesses: [
+        'dark: 2x',
+        'electric: 0.5x',
+        'fighting: 0x',
+        'fire: 2x',
+        'flying: 2x',
+        'ghost: 2x',
+        'grass: 0.5x',
+        'ground: 0.5x',
+        'ice: 2x',
+        'normal: 0x',
+        'water: 0.5x',
+      ],
+      stats: [
+        { stat: 71, name: 'HP' },
+        { stat: 60, name: 'ATT' },
+        { stat: 106, name: 'DEF' },
+        { stat: 121, name: 'SPA' },
+        { stat: 80, name: 'SPD' },
+        { stat: 70, name: 'SPE' },
+      ],
+    };
+    return data;
+  } else if (e == 'zoroark-hisui') {
+    const data = {
+      name: 'zoroark-hisui',
+      abilities: ['illusion'],
+      id: 10239,
+      sprite:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10239.png',
+      types: ['normal', 'ghost'],
+      weaknesses: [
+        'fighting: 0x',
+        'ghost: 0x',
+        'normal: 0x',
+        'bug: 0.5x',
+        'poison: 0.5x',
+        'dark: 2x',
+      ],
+      stats: [
+        { stat: 55, name: 'HP' },
+        { stat: 100, name: 'ATT' },
+        { stat: 60, name: 'DEF' },
+        { stat: 125, name: 'SPA' },
+        { stat: 60, name: 'SPD' },
         { stat: 110, name: 'SPE' },
       ],
     };

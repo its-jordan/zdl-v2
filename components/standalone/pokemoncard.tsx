@@ -29,7 +29,7 @@ export default function PokemonCard({ pokemon }: CardData) {
   const choicescarf = calcMaxSpeed(data.stats[5].stat, 'choicescarf');
   const tailwind = calcMaxSpeed(data.stats[5].stat, 'tailwind');
   return (
-    <div className='card' data-type={data.types[0]}>
+    <div className='card' data-type={data.types[0]} data-pokemon={pokemon}>
       <div className='card-top'>
         <img
           className='card-picture pokemon'

@@ -200,7 +200,7 @@ export const teamArrayMappable = [
 ];
 
 export default function Teams() {
-  const e = usePathname().replace('/offseason-2/teams/', '');
+  const e = usePathname().replace('/season-3/teams/', '');
   function returnPathTextArray() {
     if (e == 'lupa.mai') {
       const array = teamArray[`lupa.mai`];
@@ -235,7 +235,7 @@ export default function Teams() {
     } else if (e == 'thanabros') {
       const array = teamArray.thanabros;
       return array.pokemon;
-    } else if (e == 'zfr') {
+    } else if (e == 'zfr.') {
       const array = teamArray['zfr.'];
       return array.pokemon;
     } else {
