@@ -30972,8 +30972,8 @@ export default function returnMons(e: string) {
     return data;
   } else {
     const data = {
-      name: 'wooper',
-      abilities: ['damp', 'water-absorb', 'unaware'],
+      name: 'Missing',
+      abilities: ['missing ability'],
       id: 10179,
       sprite:
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/194.png',
@@ -30987,12 +30987,12 @@ export default function returnMons(e: string) {
         'steel: 0.5x',
       ],
       stats: [
-        { stat: 55, name: 'HP' },
-        { stat: 45, name: 'ATT' },
-        { stat: 45, name: 'DEF' },
-        { stat: 25, name: 'SPA' },
-        { stat: 25, name: 'SPD' },
-        { stat: 15, name: 'SPE' },
+        { stat: 0, name: 'HP' },
+        { stat: 0, name: 'ATT' },
+        { stat: 0, name: 'DEF' },
+        { stat: 0, name: 'SPA' },
+        { stat: 0, name: 'SPD' },
+        { stat: 0, name: 'SPE' },
       ],
     };
     return data;
