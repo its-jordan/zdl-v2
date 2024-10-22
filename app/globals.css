@@ -483,7 +483,29 @@ main {
   transition: background-color 300ms ease;
 }
 
+.card-stats-flex {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.card-stat-flex {
+  display: flex;
+  font-size: 0.875rem;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius);
+  background-color: hsl(var(--border));
+  transition: background-color 300ms ease;
+}
+
 .card:hover .card-stat,
+.card:hover .card-stat-flex,
 .card:hover .card-move {
   --muted-type: color-mix(
     in srgb,
@@ -857,18 +879,25 @@ main {
   opacity: 0;
   scale: 0;
   transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform-origin: bottom;
+  transform-origin: center bottom;
   width: max-content;
 }
 
-.type-icon-container:hover .type_title {
+.type-icon-container:hover .type_title,
+.tera-type-icon:hover .type_title {
   opacity: 1;
   scale: 1;
   z-index: 100;
   backdrop-filter: blur(5px);
 }
 
-.card-type-icons .type_title {
+.card-type-icons,
+.tera-type-icon {
+  position: relative;
+}
+
+.card-type-icons .type_title,
+.tera-type-icon .type_title {
   position: absolute;
   display: flex;
   flex-flow: row nowrap;
@@ -879,18 +908,21 @@ main {
   font-size: 0.875rem;
   background-color: color-mix(
     in srgb,
-    var(--_type-color) 50%,
+    var(--_type-color, pink) 50%,
     hsl(var(--muted))
   );
   border: 1px solid
-    color-mix(in srgb, var(--_type-color) 80%, hsl(var(--border)));
+    color-mix(in srgb, var(--_type-color, pink) 80%, hsl(var(--border)));
   backdrop-filter: blur(5px);
-  transform: translate(-25%);
   opacity: 0;
   scale: 0;
   transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform-origin: bottom center;
+  transform-origin: center;
   width: max-content;
+}
+
+.tera-type-icon .type_title {
+  top: -2.4rem;
 }
 
 .card-type-icons:hover .type_title {

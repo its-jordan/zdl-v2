@@ -66,6 +66,7 @@ export default function PokemonCard({ pokemon }: CardData) {
         {returnTera(data.name) ? (
           <div className='tera-type-icon'>
             <img src='/images/tera.png' alt='Tera Type Icon'></img>
+            <div className='hover-only type_title'>Tera</div>
           </div>
         ) : (
           <></>
@@ -73,11 +74,11 @@ export default function PokemonCard({ pokemon }: CardData) {
       </div>
       <div className='card-stats-container'>
         <h2 className='card-header'>Abilities</h2>
-        <div className='card-stats'>
+        <div className='card-stats-flex'>
           {data.abilities[0] == data.abilities[1] ? (
             <Link
               href={`https://www.smogon.com/dex/sm/abilities/${data.abilities[0]}/`}
-              className='card-stat min-w-max'>
+              className='card-stat-flex'>
               {data.abilities[0] ? splitMoveName(data.abilities[0]) : <></>}
             </Link>
           ) : (
@@ -86,7 +87,7 @@ export default function PokemonCard({ pokemon }: CardData) {
                 <Link
                   href={`https://www.smogon.com/dex/sm/abilities/${ability}/`}
                   key={index}
-                  className='card-stat min-w-max'>
+                  className='card-stat-flex'>
                   {ability ? splitMoveName(ability) : <></>}
                 </Link>
               );
