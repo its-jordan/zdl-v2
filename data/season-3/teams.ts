@@ -4,19 +4,19 @@ import { usePathname } from 'next/navigation';
 export const teamArray = {
   'lupa.mai': {
     name: 'Lupa',
-    team: 'Fairview Floatzels',
+    team: 'Lupa',
     pokemon: rosters['lupa.mai'],
     discord: 'lupa.mai',
     showdown: 'the jazzy ursaring',
-    picture: '/images/teams/lupamai.png',
+    picture: '/images/teams/season-3/lupamai.png',
   },
   seanboyq: {
     name: 'Sean',
-    team: 'Rayquaza Jordans',
+    team: 'Lopunny heaven 🐇',
     pokemon: rosters.seanboyq,
     discord: 'seanboyq',
     showdown: 'SeanBoyQ',
-    picture: '/images/teams/seanboyq.png',
+    picture: '/images/teams/season-3/seanboyq.png',
   },
   beachwatch: {
     name: 'Lars',
@@ -24,7 +24,7 @@ export const teamArray = {
     pokemon: rosters.beachwatch,
     discord: 'beachwatch',
     showdown: 'brickneyspears',
-    picture: '/images/teams/beachwatch.jpg',
+    picture: '/images/teams/season-3/beachwatch.jpg',
   },
   c0c0_: {
     name: 'Tristan',
@@ -32,15 +32,15 @@ export const teamArray = {
     pokemon: rosters.c0c0_,
     discord: 'c0c0_',
     showdown: 'Wishmaker01',
-    picture: '/images/teams/c0c0_.jpg',
+    picture: '/images/teams/season-3/c0c0_.jpg',
   },
   dtbaggins: {
-    name: 'Jon',
-    team: 'Fe Legion',
+    name: 'Lakeland',
+    team: 'Lakeland Porters',
     pokemon: rosters.dtbaggins,
     discord: 'dtbaggins',
     showdown: 'DTBaggins',
-    picture: '/images/teams/dtbaggins.png',
+    picture: '/images/teams/season-3/dtbaggins.jpg',
   },
   revelreloaded: {
     name: 'Mark',
@@ -48,58 +48,74 @@ export const teamArray = {
     pokemon: rosters.revelreloaded,
     discord: 'revelreloaded',
     showdown: '2016 waves',
-    picture: '/images/teams/revelreloaded.jpg',
+    picture: '/images/teams/season-3/revelreloaded.jpg',
   },
   its_jordan: {
     name: 'Jordan',
-    team: 'OMGVAMPSANDPIPLUPARESOKAWAII🦇',
+    team: 'Machampz',
     pokemon: rosters.its_jordan,
     discord: 'its_jordan',
-    showdown: 'doomedschultze',
-    picture: '/images/teams/its_jordan.png',
+    showdown: 'ceolyfestyle',
+    picture: '/images/teams/season-3/its_jordan.png',
   },
   ifurgat: {
     name: 'Jakob',
-    team: 'i was just squidding',
+    team: 'Furg',
     pokemon: rosters.ifurgat,
     discord: 'ifurgat',
     showdown: 'ifurgat',
-    picture: '/images/teams/ifurgat.jpg',
+    picture: '/images/teams/season-3/ifurgat.jpg',
   },
   resolamxxy: {
     name: 'Max',
-    team: 'Pristine Art 🤤',
+    team: 'Mind if we smoke? 😤',
     pokemon: rosters.resolamxxy,
     discord: 'resolamxxy',
     showdown: 'resolamxxy',
-    picture: '/images/teams/resolamxxy.png',
+    picture: '/images/teams/season-3/resolamxxy.png',
   },
   tokotoro: {
     name: 'Jackson',
-    team: 'Catpost Corral',
+    team: 'Catpost Co.',
     pokemon: rosters.tokotoro,
     discord: 'tokotoro',
     showdown: 't0kotoro',
-    picture: '/images/teams/tokotoro.jpg',
+    picture: '/images/teams/season-3/tokotoro.jpg',
+  },
+  thanabros: {
+    name: 'Ben',
+    team: 'The Drizzlers',
+    pokemon: rosters.thanabros,
+    discord: 'thanabros',
+    showdown: 'THANABR0S',
+    picture: '/images/teams/season-3/thanabros.png',
+  },
+  'zfr.': {
+    name: 'Alana',
+    team: 'Piplup Party',
+    pokemon: rosters.zfr,
+    discord: 'zfr.',
+    showdown: 'zfr',
+    picture: '/images/teams/season-3/zfr.jpg',
   },
 };
 
 export const teamArrayMappable = [
   {
     name: 'Lupa',
-    team: 'Fairview Floatzels',
+    team: 'Lupa',
     pokemon: rosters['lupa.mai'],
     discord: 'lupa.mai',
     showdown: 'the jazzy ursaring',
-    picture: '/images/teams/lupamai.png',
+    picture: '/images/teams/season-3/lupamai.png',
   },
   {
     name: 'Sean',
-    team: 'Rayquaza Jordans',
+    team: 'Lopunny heaven 🐇',
     pokemon: rosters.seanboyq,
     discord: 'seanboyq',
     showdown: 'SeanBoyQ',
-    picture: '/images/teams/seanboyq.png',
+    picture: '/images/teams/season-3/seanboyq.png',
   },
   {
     name: 'Lars',
@@ -107,7 +123,7 @@ export const teamArrayMappable = [
     pokemon: rosters.beachwatch,
     discord: 'beachwatch',
     showdown: 'brickneyspears',
-    picture: '/images/teams/beachwatch.jpg',
+    picture: '/images/teams/season-3/beachwatch.jpg',
   },
   {
     name: 'Tristan',
@@ -115,15 +131,15 @@ export const teamArrayMappable = [
     pokemon: rosters.c0c0_,
     discord: 'c0c0_',
     showdown: 'Wishmaker01',
-    picture: '/images/teams/c0c0_.jpg',
+    picture: '/images/teams/season-3/c0c0_.jpg',
   },
   {
-    name: 'Jon',
-    team: 'Fe Legion',
+    name: 'Lakeland',
+    team: 'Lakeland Porters',
     pokemon: rosters.dtbaggins,
     discord: 'dtbaggins',
     showdown: 'DTBaggins',
-    picture: '/images/teams/dtbaggins.png',
+    picture: '/images/teams/season-3/dtbaggins.jpg',
   },
   {
     name: 'Mark',
@@ -131,39 +147,55 @@ export const teamArrayMappable = [
     pokemon: rosters.revelreloaded,
     discord: 'revelreloaded',
     showdown: '2016 waves',
-    picture: '/images/teams/revelreloaded.jpg',
+    picture: '/images/teams/season-3/revelreloaded.jpg',
   },
   {
     name: 'Jordan',
-    team: 'OMGVAMPSANDPIPLUPARESOKAWAII🦇',
+    team: 'Machampz',
     pokemon: rosters.its_jordan,
     discord: 'its_jordan',
-    showdown: 'doomedschultze',
-    picture: '/images/teams/its_jordan.png',
+    showdown: 'ceolyfestyle',
+    picture: '/images/teams/season-3/its_jordan.png',
   },
   {
     name: 'Jakob',
-    team: 'i was just squidding',
+    team: 'Furg',
     pokemon: rosters.ifurgat,
     discord: 'ifurgat',
     showdown: 'ifurgat',
-    picture: '/images/teams/ifurgat.jpg',
+    picture: '/images/teams/season-3/ifurgat.jpg',
   },
   {
     name: 'Max',
-    team: 'Pristine Art 🤤',
+    team: 'Mind if we smoke? 😤',
     pokemon: rosters.resolamxxy,
     discord: 'resolamxxy',
     showdown: 'resolamxxy',
-    picture: '/images/teams/resolamxxy.png',
+    picture: '/images/teams/season-3/resolamxxy.png',
   },
   {
     name: 'Jackson',
-    team: 'Catpost Corral',
+    team: 'Catpost Co.',
     pokemon: rosters.tokotoro,
     discord: 'tokotoro',
     showdown: 't0kotoro',
-    picture: '/images/teams/tokotoro.jpg',
+    picture: '/images/teams/season-3/tokotoro.jpg',
+  },
+  {
+    name: 'Ben',
+    team: 'The Drizzlers',
+    pokemon: rosters.thanabros,
+    discord: 'thanabros',
+    showdown: 'THANABR0S',
+    picture: '/images/teams/season-3/thanabros.png',
+  },
+  {
+    name: 'Alana',
+    team: 'Piplup Party',
+    pokemon: rosters.zfr,
+    discord: 'zfr.',
+    showdown: 'zfr',
+    picture: '/images/teams/season-3/zfr.jpg',
   },
 ];
 
@@ -199,6 +231,12 @@ export default function Teams() {
       return array.pokemon;
     } else if (e == 'tokotoro') {
       const array = teamArray.tokotoro;
+      return array.pokemon;
+    } else if (e == 'thanabros') {
+      const array = teamArray.thanabros;
+      return array.pokemon;
+    } else if (e == 'zfr') {
+      const array = teamArray['zfr.'];
       return array.pokemon;
     } else {
       const array = teamArray.tokotoro;

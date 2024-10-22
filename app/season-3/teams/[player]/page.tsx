@@ -5,7 +5,11 @@ import { usePathname } from 'next/navigation';
 import Teams, { teamArray } from '@/data/season-3/teams';
 import PokemonCard from '@/components/standalone/pokemoncard';
 import { BsDiscord, BsPersonFill } from 'react-icons/bs';
-import { MdCalendarToday, MdOutlineCatchingPokemon } from 'react-icons/md';
+import {
+  MdCalendarToday,
+  MdOutlineCatchingPokemon,
+  MdOutlineScoreboard,
+} from 'react-icons/md';
 import { ReturnTypeMatchup, types } from '@/util/getTypeData';
 import {
   Select,
@@ -19,6 +23,7 @@ import PlayerSchedule from '@/data/season-3/playerSchedule';
 import returnMons from '@/data/pokemonData';
 import topguns from '@/data/season-3/topguns.json';
 import { nameSplit } from '@/util/nameSplit';
+import { teamRecord } from '@/data/season-3/standings';
 
 const sortOptions = [
   { value: 0, label: 'HP' },
@@ -92,6 +97,12 @@ export default function TeamsView() {
             <div className='team-info team-player'>
               <MdCalendarToday />
               <div>{season}</div>
+            </div>
+            <div className='team-info team-player'>
+              <MdOutlineScoreboard />
+              <div>{`${teamRecord(team.discord)[0]}-${
+                teamRecord(team.discord)[1]
+              }`}</div>
             </div>
           </div>
         </div>

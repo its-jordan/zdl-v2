@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'ZDL - Offseason 2',
-  description: 'ZDL - Offseason 2',
+  title: 'ZDL - Season 3',
+  description: 'ZDL - Season 3',
 };
 
 export default function RootLayout({

@@ -1,5 +1,5 @@
 import returnMons from '@/data/pokemonData';
-import { nameSplit } from '@/util/nameSplit';
+import { nameSplit, splitMoveName } from '@/util/nameSplit';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -71,15 +71,41 @@ export default function PokemonCard({ pokemon }: CardData) {
           <></>
         )}
       </div>
-      <div className='card-stats'>
-        {data.stats.map((stat, index) => {
-          return (
-            <div key={index} className='card-stat'>
-              <div className='card-stat-name'>{stat.name}</div>
-              <div className='card-stat-value'>{stat.stat}</div>
-            </div>
-          );
-        })}
+      <div className='card-stats-container'>
+        <h2 className='card-header'>Abilities</h2>
+        <div className='card-stats'>
+          {data.abilities[0] == data.abilities[1] ? (
+            <Link
+              href={`https://www.smogon.com/dex/sm/abilities/${data.abilities[0]}/`}
+              className='card-stat min-w-max'>
+              {data.abilities[0] ? splitMoveName(data.abilities[0]) : <></>}
+            </Link>
+          ) : (
+            data.abilities.map((ability, index) => {
+              return (
+                <Link
+                  href={`https://www.smogon.com/dex/sm/abilities/${ability}/`}
+                  key={index}
+                  className='card-stat min-w-max'>
+                  {ability ? splitMoveName(ability) : <></>}
+                </Link>
+              );
+            })
+          )}
+        </div>
+      </div>
+      <div className='card-stats-container'>
+        <h2 className='card-header'>Stats</h2>
+        <div className='card-stats'>
+          {data.stats.map((stat, index) => {
+            return (
+              <div key={index} className='card-stat'>
+                <div className='card-stat-name'>{stat.name}</div>
+                <div className='card-stat-value'>{stat.stat}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
       <div className='card-stats-container'>
         <h2 className='card-header'>Speed Calculations</h2>

@@ -526,11 +526,11 @@ main {
 
 .card-header {
   font-size: 0.75rem;
-  font-weight: 900;
+  font-weight: 600;
   display: flex;
   flex-flow: row nowrap;
   width: 100%;
-  padding-inline: 1rem;
+  padding-inline: 0.25rem;
   opacity: 0.5;
 }
 

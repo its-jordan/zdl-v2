@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { teamArrayMappable } from '@/data/offseason-2/teams';
+import { teamArrayMappable } from '@/data/season-3/teams';
 import {
   Select,
   SelectContent,
@@ -81,12 +81,12 @@ function calculateRecords(): Record<string, TeamRecord> {
   });
 
   // Calculate total Pokemon defeated for each team
-  Object.entries(topguns).forEach(([discord, pokemon]) => {
-    records[discord].pokemonDefeated = pokemon.reduce(
-      (total, p) => total + Math.max(0, p.defeated),
-      0
-    );
-  });
+  // Object.entries(topguns).forEach(([discord, pokemon]) => {
+  //   records[discord].pokemonDefeated = pokemon.reduce(
+  //     (total, p) => total + Math.max(0, p.defeated),
+  //     0
+  //   );
+  // });
 
   return records;
 }
@@ -101,6 +101,15 @@ export function getSelectedCategoryFromLocalStorage(): string {
 function calculateWinPercentage(record: TeamRecord): number {
   const totalGames = record.wins + record.losses;
   return totalGames > 0 ? record.wins / totalGames : 0;
+}
+
+export function teamRecord(e: string) {
+  const record = useMemo(() => calculateRecords(), []);
+  const teamRecord = record[e];
+  if (teamRecord?.wins == undefined) {
+    return [0, 0];
+  }
+  return [teamRecord?.wins, teamRecord?.losses];
 }
 
 export default function Standings() {
