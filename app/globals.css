@@ -386,6 +386,12 @@ main {
   max-width: var(--max-view-width);
 }
 
+.comparison {
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: var(--max-view-width);
+}
+
 .card {
   --muted-type: color-mix(
     in srgb,
@@ -1480,4 +1486,11 @@ main {
 
 .eliminated-explanation {
   font-size: 0.875rem;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
 }

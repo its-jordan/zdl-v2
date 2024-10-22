@@ -153,7 +153,7 @@ export default function PokemonTeamComparison() {
     <Card className='w-full max-w-4xl mx-auto'>
       <CardContent className='p-6'>
         <h1 className='text-2xl font-bold mb-4'>Pokémon Comparison</h1>
-        <div className='grid grid-cols-2 gap-4 mb-4'>
+        <div className='comparison-grid'>
           <div>
             <Select value={team1} onValueChange={setTeam1}>
               <SelectTrigger>
