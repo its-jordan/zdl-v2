@@ -159,11 +159,11 @@ export const teamArrayMappable = [
   },
   {
     name: 'Jakob',
-    team: 'Furg',
+    team: '$CAMMED',
     pokemon: rosters.ifurgat,
     discord: 'ifurgat',
     showdown: 'ifurgat',
-    picture: '/images/teams/season-3/ifurgat.jpg',
+    picture: '/images/teams/season-3/ifurgat.png',
   },
   {
     name: 'Max',
