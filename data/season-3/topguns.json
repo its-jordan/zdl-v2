@@ -65,11 +65,11 @@
   ],
   "seanboyq": [
     { "pokemon": "iron-valiant", "defeated": 0 },
-    { "pokemon": "zapdos", "defeated": 0 },
-    { "pokemon": "weavile", "defeated": 0 },
+    { "pokemon": "zapdos", "defeated": 2 },
+    { "pokemon": "weavile", "defeated": 1 },
     { "pokemon": "jirachi", "defeated": 0 },
     { "pokemon": "diggersby", "defeated": 0 },
-    { "pokemon": "skeledirge", "defeated": 0 },
+    { "pokemon": "skeledirge", "defeated": 3 },
     { "pokemon": "shaymin-land", "defeated": 0 },
     { "pokemon": "tentacruel", "defeated": 0 },
     { "pokemon": "minior-red-meteor", "defeated": 0 },
@@ -123,8 +123,8 @@
     { "pokemon": "shedinja", "defeated": 0 }
   ],
   "thanabros": [
-    { "pokemon": "tapu-koko", "defeated": 0 },
-    { "pokemon": "manaphy", "defeated": 0 },
+    { "pokemon": "tapu-koko", "defeated": 1 },
+    { "pokemon": "manaphy", "defeated": 1 },
     { "pokemon": "scizor", "defeated": 0 },
     { "pokemon": "pelipper", "defeated": 0 },
     { "pokemon": "iron-treads", "defeated": 0 },
@@ -132,7 +132,7 @@
     { "pokemon": "sinistcha", "defeated": 0 },
     { "pokemon": "goodra", "defeated": 0 },
     { "pokemon": "ditto", "defeated": 0 },
-    { "pokemon": "archeops", "defeated": 0 }
+    { "pokemon": "archeops", "defeated": 2 }
   ],
   "zfr.": [
     { "pokemon": "gliscor", "defeated": 0 },
