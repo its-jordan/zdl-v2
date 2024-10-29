@@ -73,7 +73,7 @@ export default function PlayerSchedule({
                       </div>
                     </Link>
                     <Link
-                      href={`/offseason-2/teams/${
+                      href={`/season-3/teams/${
                         // @ts-ignore
                         teamArray[playerMatch.player2].discord
                       }`}
