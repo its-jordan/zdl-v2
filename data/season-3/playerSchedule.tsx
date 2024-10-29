@@ -34,7 +34,7 @@ export default function PlayerSchedule({
                 <div className='player-schedule-info'>
                   <div className='player-schedule-teams'>
                     <Link
-                      href={`/offseason-2/teams/${
+                      href={`/season-3/teams/${
                         // @ts-ignore
                         teamArray[playerMatch.player1].discord
                       }`}
