@@ -96,7 +96,7 @@ export const teamArray = {
     pokemon: rosters.zfr,
     discord: 'zfr.',
     showdown: 'zfr',
-    picture: '/images/teams/season-3/zfr.jpg',
+    picture: '/images/teams/season-3/zfr..png',
   },
 };
 
@@ -195,7 +195,7 @@ export const teamArrayMappable = [
     pokemon: rosters.zfr,
     discord: 'zfr.',
     showdown: 'zfr',
-    picture: '/images/teams/season-3/zfr.jpg',
+    picture: '/images/teams/season-3/zfr..png',
   },
 ];
 
